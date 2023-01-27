@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt]{article}
+% Set Margins according as you want.
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\color{black}
+\lhead{\includegraphics[scale=0.12]{DDU_Logo.png}}
+\rhead{Rigid Body Dynamics\\Akhlak Ansari}
+\cfoot{Page \thepage}
+\usepackage{tikz, tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+\usepackage{tikz, tikz-3dplot}
+
+\title{\underline {\sc {\textbf RIGID BODY DYNAMICS}}}
+
+\author{\textbf{Akhlak Ansari}}
+
+\begin{document}
+    \maketitle
+
+    \begin{center}
+        \includegraphics[scale=1]{DDU_Logo.png}\\
+        {\textbf {\Large Department of Mathematics and Statistics}}
+    \end{center}
+
+    \vspace{6cm}
+
+    \begin{center}
+        \Large{$\copyright$ All Rights Reserved}
+    \end{center}
+
+    \pagebreak
+   
+    \section*{\underline{Energy Equation:}}
+
+    Let a rigid body be moving with an acceleration $a$. Let an external force $\vec{F}$ acts on an element of mass $m$ of rigid body then the force $\left(-m\vec{a}  + \vec{F}\right)$ acts on this element of the rigid body.Similar forces acting on the other elements of the body,forms a system of forces in equilibrium.
+
+    By the principal of virtual work ,
+
+  
+    \begin{equation*}
+        \begin{split}
+            \vec{F}\cdot d\vec{r} & = 0\\
+            \sum\left(-m\vec{a} + \vec{F}\right)\cdot d\vec{r} & = 0\\
+            \sum m\vec{a}\cdot d\vec{r} & = \vec{F}\cdot d\vec{ r}\\
+            \sum m\vec{a}\cdot \vec{v}dt & = \vec{F}\cdot d\vec{r}\\
+            \sum m\frac{d\vec{v}}{dt}\cdot \vec{v}dt & = \vec{F}\cdot d\vec{r}\\
+        \end{split}
+    \end{equation*}
+
+\end{document}

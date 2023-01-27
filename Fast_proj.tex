@@ -1,0 +1,418 @@
+\documentclass[a4paper,12pt]{article}
+% Set Margins according as you want.
+\usepackage{geometry}
+\geometry{a4paper,top=3cm}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\color{black}
+\lhead{\includegraphics[scale=0.1]{DDU_Logo.png}}
+\rhead{Project:Fourier Analysis and Summability Theory}
+\cfoot{Page \thepage}
+\usepackage{tikz, tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+
+
+\title{\underline {\sc {\textbf Fourier Analysis and Summability Theory}}}
+
+\author{\textbf{Akhlak Ansari}}
+
+\begin{document}
+    \pgfplotsset{compat=1.17}
+    \color{black}
+
+    \maketitle 
+
+         
+    
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{7cm}
+
+        \textbf{$\copyright\ 2022-23$ All Rights Reserved}
+
+    \end{center}
+
+    \begin{center}
+        \section*{\Large \underline{\texttt{\textbf{PROPERTIES OF FOURIER COEFFICIENTS}}}}
+    \end{center}
+
+    \section*{\underline{\texttt{\textbf {Pre-Requisites:}}}}
+    \par
+
+    \begin{enumerate}
+        \color{black}
+        \item Fourier Series
+        \item Concept of Fourier Coefficients
+        \item Concepts of Capital order and Little order
+    \end{enumerate}
+
+
+    At this instance let's briefly discuss above mentioned pre-requisites.
+
+    \subsection*{\underline{\textbf{$1.$\ \texttt{Fourier Series:}}}}
+
+    \paragraph*{}
+
+    If a function $f(x)$ defined and $2\pi  -$periodic i.e lies in the interval either $\left[0,2\pi\right]$\ or $\left[-\pi,\pi\right]$ ,\ then its Fourier series is , 
+
+    \begin{equation*}
+        f(x) = \sum_{n=0}^{\infty}a_{n}\cos\left(nx\right) + \sum_{n=1}^{\infty}b_{n}\sin\left(nx\right) \tag{1}
+    \end{equation*}
+
+    The Fourier series of function $f(x)$ means how, the function $f(x)$ can be represented in the terms of sum of large number of sine and cosine functions of different frequencies and all that. 
+
+    \paragraph*{}
+
+    In our equation no.(1), there have two unknowns, $a_{n}$ and $b_{n}$ , called the \textbf{Fourier Coefficients.}
+
+    \subsection*{\underline{$2.$\ \texttt{\textbf{Concept of Fourier Coefficients:}}}}
+
+    The factor $a_{n}$\ and \ $b_{n}$\ in equation(1) referred as the Fourier coefficients.
+
+    \subsubsection*{\texttt{\underline{\textbf{Computation of Fourier Coefficients:}}}}
+
+    To find the Fourier coefficients, the key idea is \textbf{Orthogonality}. That's the first central idea here in Fourier series.
+
+    \begin{tcolorbox}[title=Some crucial fact about orthogonality]
+        Orthogonality means perpendicular. Let's consider a vector and a second vector there should be right angle between them.\\
+        And Mathematically, we check that by dot product(inner product) between two vectors should be zero.
+
+        Let $a_{1}, a_{2}, b_{1}, b_{2}$ are the vectors , then orthogonality means, 
+        $$a_{1}\cdot b_{1} + a_{2}\cdot b_{2} = 0.$$
+
+    \end{tcolorbox}
+
+        \begin{tcolorbox}
+            Since we have functions, instead of adding we just use the idea of Integration.\\
+            So, In case of functions orthogonality means,
+
+        $$\int_{-\pi}^{\pi}\cos\left(nx\right)\cdot \cos\left(kx\right) = 0.\ ,\ \forall\ n , k \in \mathbb{Z^\geq}$$
+        \& 
+        $$\int_{-\pi}^{\pi}\sin\left(nx\right)\cdot \sin\left(kx\right) = 0.\ ,\ \forall\ n , k \in \mathbb{Z^\geq}$$
+        
+        \end{tcolorbox}
+
+        Multiply equation(1) by $\cos(kx) ,\ k\in \mathbb{Z}$ and integrate within the limit $-\pi\ \mbox{to}\ \pi$, we have like this ,
+
+        $$\int_{-\pi}^{\pi}f(x)\cos(kx)dx  = \int_{-\pi}^{\pi}\left\{\sum_{n=0}^{\infty}a_{n}\cos(nx) + \sum_{n=1}^{\infty}b_{n}\sin(nx)\right\}\cos(kx)dx$$
+
+        $$= \int_{-\pi}^{\pi}a_{k}\left(\cos(kx)\right)^2dx$$
+
+        $$= a_{k}\cdot \pi$$
+
+        $$\implies\ a_{k}  =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(kx)dx$$
+
+        $$\mbox{Interchanging the dummy index $k$ by $n$ we get as, }$$
+
+        \begin{align*}
+            \boxed{a_{n}  =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)dx}
+        \end{align*}
+
+        To find out $a_{0}$ let's put $k=0$ in expression of above manipulation,
+
+        $$a_{n}  =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)dx$$
+
+        we get as,
+
+
+        \begin{align*}
+            \boxed{a_{0}  = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)dx}
+        \end{align*}
+
+        Here, we see that $a_{0}$ is same as $a_{n}$ . But, it looks like the particular value of $a_{n}$ at $n=0$.
+
+        \pagebreak
+
+        Next,\\
+
+        Multiply equation(1) by $\sin(kx) ,\ k\in \mathbb{Z}$ and integrate within the limit $-\pi\ \mbox{to}\ \pi$, we have like this ,
+
+        $$\int_{-\pi}^{\pi}f(x)\sin(kx)dx  = \int_{-\pi}^{\pi}\left\{\sum_{n=0}^{\infty}a_{n}\cos(nx) + \sum_{n=1}^{\infty}b_{n}\sin(nx)\right\}\sin(kx)dx$$
+
+        $$= \int_{-\pi}^{\pi}b_{k}\left(\sin(kx)\right)^2dx$$
+
+        $$= b_{k}\cdot \pi$$
+
+        $$\implies\ b_{k}  =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(kx)dx$$
+
+        $$\mbox{Interchanging the dummy index $k$ by $n$ we get as, }$$
+
+        \begin{align*}
+            \boxed{b_{n}  =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)dx}
+        \end{align*}
+
+        The values of $a_{0}, a_{n}, b_{n}$ in the boxed is used to compute the Fourier coefficients.
+
+        \pagebreak
+
+        \subsection*{\underline{$3.$\ \texttt{\textbf{Concept of Capital order and Little order:}}}}
+
+        \subsubsection*{\underline{\texttt{\textbf{Definition of Capital order}}(O):}}
+
+        We mean by Capital order $'O'$ that $\left|f(x)\right| < k\left|g(x)\right|$, where $k$ is a positive constant, then ,
+        $$f(x) = O(g(x))\ \mbox{as}\ x\to a$$
+
+        or, 
+
+        $$\lim_{x\to a}\left\{\frac{f(x)}{g(x)}\right\} = A\ ,\ A \neq 0 \in \mathbb{Z^> }$$
+
+        then, $f(x) = O(g(x))\ \mbox{as}\ x\to a.$
+
+        \subsubsection*{\underline{\texttt{\textbf{Definition of Little order}}(o):}}
+
+        We mean by Little order $'o'$ that $\left|f(x)\right| < k\left|g(x)\right|$, where $k$ is a positive constant, then ,
+        $$f(x) = o(g(x))\ \mbox{as}\ x\to a$$
+
+        or, 
+
+        $$\lim_{x\to a}\left\{\frac{f(x)}{g(x)}\right\} = 0$$
+
+        then, $f(x) = o(g(x))\ \mbox{as}\ x\to a.$\\[3mm]
+
+        
+
+        \textbf{Illustration:}\\
+
+        
+        (I)\  $$\lim_{x\to 0}\left\{\frac{\sin x}{x}\right\} = 1 \neq 0.$$
+        $$\mbox{thus,}\  \sin x = O(x)\ \mbox{as}\ x\to 0.$$
+
+        (II)\  $$\lim_{x\to \infty}\left\{\frac{\sin x}{x}\right\} = 0.$$
+        $$\mbox{thus,}\  \sin x = o(x)\ \mbox{as}\ x\to \infty.$$
+
+        (III)\  $$\lim_{x\to \infty}\left\{\frac{(x+1)^2}{x^2}\right\} = 1 \neq 0.$$
+        $$\mbox{thus,}\  (x+1)^2 = O(x^2)\ \mbox{as}\ x\to \infty.$$
+
+        (IV)\  $$\lim_{x\to 0}\left\{\frac{\cos x }{x+1}\right\} = 1 \neq 0.$$
+        $$\mbox{thus,}\  \cos x = O(x+1)\ \mbox{as}\ x\to 0.$$
+
+
+        \section*{\underline{\texttt{\textbf {Introduction:}}}}
+
+        \begin{center}
+            \includegraphics[scale=0.7]{Fourier Wolfram.png}
+        \end{center}
+
+        A Fourier series is an expansion of a periodic function $f(x)$ in terms of an infinite sum of sines and cosines. Fourier series make use of the orthogonality relationships of the sine and cosine functions.\\The computation and study of Fourier series is known as harmonic analysis and is extremely useful as a way to break up an arbitrary periodic function into a set of simple terms that can be plugged in, solved individually, and then recombined to obtain the solution to the original problem or an approximation to it to whatever accuracy is desired or practical.\\
+        Examples of successive approximations to common functions using Fourier series are illustrated above.\\
+
+        The Fourier coefficients $a_{0},a_{n}, b_{n}$ are the very useful factor to compute Fourier series and approximate the desired given function.The approximation of functions using trignometric series gives us very fascinating and beautiful perspective of computational mathematics. \\
+
+        The Fourier coefficients have a lot properties .Since the Fourier coefficients are make sense as standard integrals so, they have a lot of properties similarly as the properties of definite integrals.\\
+
+        The Fourier coefficients gives us the better and better approximation of the given function. The Fourier series is a tool that is used to approximate also the complex algebraic functions.
+
+        \pagebreak
+
+        \section*{\underline{\texttt{\textbf {Properties of Fourier Coefficients:}}}}
+
+        If $f(x)$ is integrable and $2\pi-$periodic function then, Fourier series,
+
+        $$f(x) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty}\left(a_{n}\cos nx + b_{n}\sin nx\right)$$
+
+        Then,
+
+        $$a_{n} = o\left(\frac{1}{n}\right)$$
+
+        \&
+
+        $$b_{n} = o\left(\frac{1}{n}\right).$$
+
+        \textbf{\underline{Proof:}}
+
+        \paragraph*{}
+
+        Let a function $f(x)$ defined as ,
+
+        $$f(x) = f(0) + \int_{0}^{x}\phi(t)dt\ ,\  \forall\ x \geq 0.$$
+
+        $$\mbox{then,}\ f'(x) = \phi(x) $$
+
+        $$\mbox{and,}\ f(0) = 2\pi$$
+
+        So,
+
+        \begin{center}
+            \begin{equation*}
+                \begin{split}
+                    a_{n} & = \frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos nx \ dx\\[2.5mm]
+                    & = \frac{1}{\pi}\left[\left(\frac{f(x)\sin nx}{n}\bigg|_{0}^{2\pi}\right) - \int_{0}^{2\pi}f'(x)\frac{\sin nx}{n}dx\right]\\[2.5mm]
+                    \implies\ a_{n} & = \frac{1}{\pi}\left[-\frac{1}{n}\int_{0}^{2\pi}f'(x)\sin nx \ dx\right]
+                \end{split}
+            \end{equation*}
+        \end{center}
+
+        Multiplying both side by $n$ we get as,
+
+        \begin{center}
+            \begin{equation*}
+                \begin{split}
+                    na_{n} & = - \frac{1}{\pi}\int_{0}^{2\pi}\phi(x)\sin nx \ dx\\[2.5mm]
+                    \lim_{n\to \infty}\left|na_{n}\right| & = - \frac{1}{\pi}\left[\lim_{n\to \infty}\int_{0}^{2\pi}\phi(x)\sin nx \ dx\right]\\[2.5mm]
+                    & = - \frac{1}{\pi}\times 0\ \mbox{(By Riemann-Lebesgue theorem)}
+                \end{split}
+            \end{equation*}
+        \end{center}
+
+        $$\lim_{n\to \infty}\left|na_{n}\right|  \to 0$$
+
+        $$\lim_{n\to \infty}\frac{a_{n}}{1/n}  = 0$$
+
+        \begin{align*}
+            \boxed{a_{n} = o\left(\frac{1}{n}\right)}
+        \end{align*}
+
+        Similarly,
+
+        \begin{center}
+            \begin{equation*}
+                \begin{split}
+                    b_{n} & = \frac{1}{\pi}\int_{0}^{2\pi}f(x)\sin nx \ dx\\[2.5mm]
+                    & = \frac{1}{\pi}\left[\left(\frac{-f(x)\cos nx}{n}\bigg|_{0}^{2\pi}\right) + \int_{0}^{2\pi}f'(x)\frac{\cos nx}{n}dx\right]\\[2.5mm]
+                    \implies\ b_{n} & = \frac{1}{\pi}\left[\frac{1}{n}\int_{0}^{2\pi}f'(x)\cos nx \ dx\right]
+                \end{split}
+            \end{equation*}
+        \end{center}
+
+        Multiplying both side by $n$ we get as,
+
+        \begin{center}
+            \begin{equation*}
+                \begin{split}
+                    nb_{n} & =  \frac{1}{\pi}\int_{0}^{2\pi}\phi(x)\cos nx \ dx\\[2.5mm]
+                    \lim_{n\to \infty}\left|nb_{n}\right| & =  \frac{1}{\pi}\left[\lim_{n\to \infty}\int_{0}^{2\pi}\phi(x)\cos nx \ dx\right]\\[2.5mm]
+                    & =  \frac{1}{\pi}\times 0\ \mbox{(By Riemann-Lebesgue theorem)}
+                \end{split}
+            \end{equation*}
+        \end{center}
+
+        $$\lim_{n\to \infty}\left|nb_{n}\right|  \to 0$$
+
+        $$\lim_{n\to \infty}\frac{b_{n}}{1/n}  = 0$$
+
+        \begin{align*}
+            \boxed{b_{n} = o\left(\frac{1}{n}\right)}
+        \end{align*}
+
+        The results on the box are the properties of the Fourier coefficients.
+
+        \pagebreak
+
+        \section*{\underline{\texttt{\textbf {Applications:}}}}
+
+        To recapitulate, Fourier series simplify the analysis of periodic, real­valued functions. Specifically, it can break up a periodic function into an infinite series of
+        sine and cosine waves. This property makes Fourier series very useful in many
+        applications. We now give a few.
+        Consider the very common differential equation given by
+
+        $$x''(t) + ax'(t) + b = f(t)$$
+
+        This equation describes the motion of a damped harmonic oscillator that is
+        driven by some function $f(t)$. It can be used to model an extensive variety of
+        physical phenomena, such as a driven mass on a spring, an analog circuit with a
+        capacitor, resistor, and inductor, or a string vibrated at some frequency. There
+        are two parts to the solution of equation . The first part is a transient that
+        fades away (generally) fairly quickly. When the transient is gone, what remains
+        is the steady state solution. This is what we will concern ourselves with.
+        If $f(t)$ is a sinusoid, then the solution is also a sinusoid which is not very
+        difficult to find. The problem is that the driver is generally not a simple sinusoid,
+        but some other periodic function. In electronics, for example, a common driving
+        voltage function is the square wave $s(t)$, a periodic function (whose period we
+        shall say is $2\pi$) such that $s(t) = 0$ for $-\pi \leq t < 0$ and $s(t) = 1$ for $0 \leq t < \pi$.
+        The physical property of oscillating systems that makes Fourier Analysis
+        useful is the property of superposition , in other words, suppose the driving force 
+        $f_{1}(t)$, along with some initial conditions, produces some steady state solution
+        $x_{1}(t)$, and that another driving force, $f_{2}(t)$ produces the steady state solution
+        $x_{2}(t)$. Then the driving force $f_{3}(t) = f_{1}(t) + f_{2}(t)$ produces the steady state
+        response $x_{3}(t) = x_{1}(t) + x_{2}(t).$
+        Then, since we can represent any period driving function as a Fourier series,
+        and it is a simple matter to find the steady state solution to a sinusoidally driven oscillator, we can find the response to the arbitrary driving function
+        $$ f(x) = a_0 + \sum(a_n \cos(nx) + b_n\sin(nx)).$$
+        So suppose we had our square wave equation, where $f(t)$ is the square wave
+        function. We could then decompose the square wave into sinusoidal components
+        as follows:
+
+        \begin{equation*}
+            \begin{split}
+                C_{n} & = \frac{1}{2\pi}\int_{-\pi}^{\pi}s(x)e^-{inx} dx\\[2.5mm]
+                & = \frac{1}{2\pi}\int_{0}^{2\pi}e^{-inx} dx\\[2.5mm]
+                & = \frac{i}{2n\pi}\left(e^{in\pi} - 1\right)
+            \end{split}
+        \end{equation*}
+
+        $$C_{-n} = \frac{-i}{2n\pi}\left(e^{-in\pi} - 1\right)$$
+
+        and then just combine the $c_{n}$ and $c_{-n}$ terms as before. The result would be an
+        infinite sum of $\sin$ and $\cos$ terms of the form in equation. The steady state
+        response of the system to the square wave would then just be the sums of the
+        steady state responses to the sinusoidal components of the square wave.
+        The basic equations of the Fourier series led to the development of the Fourier
+        transform, which can decompose a non periodic function much like the Fourier
+        series decomposes a periodic function. Because this type of analysis is very
+        computation intensive, different Fast Fourier Transform algorithms have been
+        devised, which lower the order of growth of the number of operations from
+        order $(N^2)$ to order $(n log(n))$.
+        With these new techniques, Fourier series and Transforms have become an
+        integral part of the toolboxes of mathematicians and scientists. Today, it is
+        used for applications as diverse as file compression (such as the JPEG image
+        format), signal processing in communications and astronomy, acoustics, optics,
+        and cryptography.
+
+
+
+
+
+    
+
+
+
+
+    
+                    
+                    
+              
+
+
+
+
+        
+        
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+        
+
+        
+
+        
+    
+
+    
+\end{document}

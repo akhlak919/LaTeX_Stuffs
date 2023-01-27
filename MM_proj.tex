@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{tikz, tcolorbox,tikzcodeblocks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+%% Another packages
+\usepackage{geometry}
+\geometry{left=25mm, top=30mm}
+\usepackage{physics,romannum}
+\usepackage{import}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,      
+    urlcolor=blue
+}
+\usepackage{pdfpages}
+
+
+
+
+
+
+
+\title{{\bf \underline{PROJECT: MATHEMATICAL MODELING}}}
+\author{\bf Akhlak Ansari}
+%\date{\bf December 4, 2022}
+
+\begin{document}
+    \maketitle
+
+    \pagestyle{fancy}
+    \fancyfoot{}
+    \color{black}
+    %% \fancyhf{}
+    \lhead{\includegraphics[scale=0.14]{DDU_Logo.png}}
+    \rhead{Project : Mathematical Modeling}
+    % \renewcommand{\headrulewidth}{0.5mm}
+    %% \rfoot{\thepage}
+    \lfoot{By: Akhlak Ansari}
+    \rfoot{\thepage}
+    \renewcommand{\footrulewidth}{1pt}
+
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{7.8cm}
+
+        \textbf{Session: 2022-23}
+
+    \end{center}
+
+
+
+    \vspace*{0.2cm}
+
+    \begin{center}
+        \section*{\underline{\LARGE{{\bf SIR MODEL FOR EPIDEMICS}}}}
+    \end{center}
+
+    \section*{\underline{Historical Background/Introduction:}}
+
+    In 1927, W.O. Kermack and A.G. Mckendrick proposed a mathematical model to analyze the spread of infectious disease, called the {\bf SIR Model}.
+
+    In this model whole population is considered to be closed, and also the population divided into three compartments like,
+    \begin{itemize}
+        \item Susceptibles 
+        \item Infectives
+        \item Removed(i.e. Recovered/Died Population)
+    \end{itemize}
+
+    Since, the central idea behind this model is to only considered the compartments Susceptible, Infective and Removed, so called {\bf SIR Model}.
+
+    \section*{\underline{Pre-Requisites:}}
+    Before going further in the deep to the model, we just need have to be knowledge of some basic terms that are involved throughout the model.
+
+    \begin{enumerate}
+        \item Epidemic and Pandemic
+        \item Population
+        \item Susceptible
+        \item Infective
+        \item Recovered
+    \end{enumerate}
+
+    Let's discuss briefly about these concepts,
+
+    \subsection*{\underline{1.Epidemic and Pandemic:}}
+
+    A large short-term outbreak of a disease is referred to as Epidemic.
+    
+    e.g. Dengue, Malaria, Flu etc.
+    \vspace*{1cm}
+
+    Worldwide epidemic is called Pandemic.
+    
+    e.g. COVID-19, SARS etc.
+
+    \pagebreak
+
+    \subsection*{\underline{2.Population:}}
+
+    It is defined as the group of freely interacting organisms of the same kind of species present in specific geographical area at a given time. A population has distinguishing qualities of its own which are different from those of the individual/biomass forming the population.
+
+    \subsection*{\underline{3.Susceptible:}}
+
+    The population that can prone to a disease but has not aquired the disease is referred as Susceptible.Denoted by $S(t)$, where $t$ is the time.
+
+
+    \subsection*{\underline{4.Infective:}}
+
+    The population that has aquired the disease and ready to spread the infection among others.It is denoted by $I(t)$, where $t$ has their usual meaning.
+
+    \subsection*{\underline{5.Recovered Population:}}
+
+    The population that fights back to the disease and get recovered from the disease is referred as to be Recovered Population.It is denoted by $R(t)$, where $t$ has their usual meaning. 
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{center}
+        \section*{\underline{\Large{{\bf SIR Model}}}}
+    \end{center}
+
+    There are some {\bf assumption} to describe the SIR Model,
+    \begin{itemize}
+        \item Population is closed. i.e. total population remains constant.
+        \item Rate of increase in infectives is proportional to the contact between susceptibles and infectives, we also assume that this occurs at a constant rate.
+        \item The death or recovery rate is constant.
+    \end{itemize}
+
+    At this instance, we have made our assumptions, we can start to write down the equations that are going to govern our model.
+
+   
+
+    \begin{center}
+        \begin{equation*}
+            \begin{split}\
+                \frac{dS}{dt} & = -\beta IS\\[2mm]
+                \frac{dI}{dt} & = \beta IS - \gamma I\\[2mm]
+                \frac{dR}{dt} & = \gamma I
+            \end{split}
+        \end{equation*}
+    \end{center}
+
+    where $\beta$ is infectious contact rate and $\gamma$ is constant rate of recovery/death.
+
+    \[\mbox{Initially},\  S = S_0,\ I = I_0,\ R = 0\  \mbox{and} \ \frac{d}{dt}\left(S+I+R\right) = 0,\ S+I+R = S_0 + I_0.\]
+
+
+    This is a system of non-linear differential equations and much like a system of equations in general, so that all three must be true at the same time.
+    \vspace*{0.5cm}
+
+    Thus here, $S(t), I(t)\ \mbox{and}\ R(t)$ must obey all three of these equations. This goes to be satisfy, the SIR Model.
+    \vspace*{0.5cm}
+
+    Here, we not going to completely try and solve this particular system of non-linear differential equations.\vspace*{0.5cm}
+
+
+    Here, $S$ times $I$ turns to be in non-linear, which may be challenging for us to solve.But here we will just discuss the some {\bf qualitative features}, that how epidemic spread from analyzing the system of  non-linear differential equations.
+
+
+    %\pagebreak
+
+    \vspace*{0.2cm}
+
+    \subsection*{\underline{\Large{{\bf Qualitative Features(Interpretation of Graphs):}}}}
+
+    Let's draw graph that represents the variation in $S(t), I(t)\ \mbox{and}\ R(t)$ against time(No. of Days). 
+
+    \begin{center}
+        \def\svgwidth{14cm}
+        \input{drawing-3.eps_tex}
+    \end{center}
+
+    Analyzing the data, we see that initially everyone is susceptible.In the graph we see that as the number of days increases, the number of susceptibles are decreases.
+    
+    Eventually, at the end of the day susceptibles goes to be vanishes, and all are infected.
+
+    \vspace*{0.5cm}
+
+    Likewise, the number of recovered people according to the graph, which is initially zero, and as the number of days increase, it goes to be up and up. And at the end of the day everyone would be recovered or die, or mixed of these two events occurs.
+
+    \vspace*{0.5cm}
+
+    But, now let's look at $\frac{dI}{dt}$ . If we look at the equations that governs $\frac{dI}{dt}$, that's got two different terms : A positive and a negative.
+    \vspace*{0.5cm}
+
+    And, For the first portion, when the number of susceptibles is large(i.e initially), then the positive term dominates, and then infected goes to be increasing.
+    \vspace*{0.5cm}
+
+    But, if time goes on the number of susceptibles are going to drop, then the negative term dominates over the positive term.So at this instant, number of infected people down as the transition of people recovery more quickly than that of the new cases transiting as susceptible.
+
+    %\pagebreak
+
+    \vspace*{0.3cm}
+    
+    These three graphs set an example of solution of the SIR Model's non-linear differential equations.And it's tells us what kind of behaviour of the solution is.
+
+    Let us consider, a deep analysis of 
+    \[\frac{dI}{dt} = \beta SI - \gamma I\]
+    \begin{center}
+        At, $t = 0\ \mbox{i.e. initially}\ ,$
+        \[\frac{dI}{dt}\bigg|_{t=0} = \beta S_{0}I_{0} - \gamma I_{0}\]
+    \end{center} 
+
+    Let's discuss the case,
+
+    \vspace*{0.2cm}
+    \subsubsection*{\underline{{\bf Case}}-}
+
+    \begin{center}
+        \[\mbox{If},\ \ \beta S_{0} I_{0} - \gamma I_{0} < 0\]
+        \[\mbox{then,}\ \ I_{0}\left(\beta S_{0} - \gamma\right) < 0\]
+        \[\mbox{But,}\ \ I_{0} \not < 0\]
+        \[\therefore\ \ \beta S_{0} - \gamma < 0\] 
+        \[\frac{\beta S_{0}}{\gamma} - 1 < 0\]
+        \[\boxed{R_{0} = \frac{\beta S_0}{\gamma} < 1}\]
+    \end{center}
+
+    where $R_{0}$ is called {\bf Basic Reproductive Ratio}.
+    \vspace*{0.2cm}
+
+    Analyzing the above equation we say that ratio satisfies only, when the transmission rate $\beta$ is lower, it happens only the prevention of contact with others that is maintain {\bf social distancing, regular hand washing and even make quarantine}.
+    \vspace*{0.2cm}
+
+    And the second factor that plays an important role is $S_0$, that if $S_0$ is lower the ratio holds, it is happens only if the more people are {\bf vaccinated} at the begining of the disease.
+
+    Let us consider $\frac{dI}{dt}$ as,
+    \vspace*{0.2cm}
+    \[\frac{dI}{dt} = I\left(\beta S_{0} - b\right)\]
+    \begin{center}
+        (It is written under initial condition, but some population has to be infected initially already.)
+        
+
+        Solution of above differential equation is,
+        \[I(t) = e^{(\beta S_{0} - b)t}\]
+
+        So, here in the begining, when the assumptions are valid, so near $t = 0$, our initial susceptible $S_{0}$ is approximately constant, then we get exponential growth. 
+    \end{center}
+    
+    
+    \section*{\underline{\Large{{\bf Solution of D.E. of SIR Model(Using Python):}}}}
+    % Importing pdf 
+
+    \includepdf[pages=1-2]{SIR2}
+
+    \section*{\underline{\Large{{\bf Applications of SIR Model:}}}}
+
+    \subsection*{\underline{{\bf SARS:}}} 
+    The Severe Acute Respiratory Syndrome (SARS) was the first epidemic of the 21st century. It emerged in China late 2002 and quickly spread to 32 countries causing more than 774 deaths and 8098 infections worldwide SARS is a highly contagious respiratory disease which is caused by the SARS Coronavirus. It is a serious form of pneumonia, resulting in acute respiratory distress and sometimes death. The SARS epidemic originated in China, in late 2002. Although the Chinese government tried to control the the outbreak of the SARS epidemic without the awareness of the World Health Organization (WHO), it continued to spread.In the research papers and they use the SIR model,as a first approach to explain this disease. The use the superspreading individuals - infected individuals that infect more than the avera number of secondary cases - to modified the traditional epidemiological model. The effect of superspreaders can be used in cases where there is a higher
+    transmission rate.
+
+
+
+    \section*{\underline{{\bf Influenza:}}} 
+    Consider an epidemic of influenza in a British boarding school. Three boys were reported to the school infirmary with the typical symptoms of influenza. Over the next few days, a very large fraction of the 763 boys in the
+    school had contact with the infection. Within two weeks, the
+    infection had become extinguished. The best fit parameters
+    yield an estimated active infectious period of $1/\gamma$ = 2.2 days
+    and a mean transmission rate $\beta$ = 1.66 per day. Therefore,
+    the estimated $R_0$ is 3.652. It can be observed that the curve of susceptible is decreasing all over the time, because the birth was no considered, and once become infected never returns to the state of susceptible. The curve of infected reaches to a peak of the disease beyond 5 weeks. This information could be very useful for health authorities to ensure that all resources are available - medicines, doctors , hospitalization resources - to provide a good health care if necessary. Depending of flatness of the curve the response should be adaptive. The curve related to the recovered compartment is important because accumulates the number of individuals that have been seek in that outbreak.
+
+    \section*{References:}
+    
+
+    \begin{itemize}
+        \item \url{https://core.ac.uk/download/pdf/78556409.pdf}
+        \item For raw document material, please visit, \url{https://github.com/akhlak919}
+    \end{itemize}
+
+\end{document}    

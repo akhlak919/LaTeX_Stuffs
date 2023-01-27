@@ -1,0 +1,428 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{tikz, tcolorbox,tikzcodeblocks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+%% Another packages
+\usepackage{geometry}
+\geometry{left=25mm, top=30mm}
+\usepackage{physics,romannum}
+\usepackage{import}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,      
+    urlcolor=blue
+}
+\usepackage{pdfpages,multicol,enumitem}
+
+
+
+
+
+
+
+\title{{\bf \underline{ASSIGNMENT: MATHEMATICAL MODELING}}}
+\author{\bf Akhlak Ansari}
+%\date{\bf December 4, 2022}
+
+\begin{document}
+    \maketitle
+
+    \pagestyle{fancy}
+    \fancyfoot{}
+    \color{black}
+    %% \fancyhf{}
+    \lhead{\includegraphics[scale=0.14]{DDU_Logo.png}}
+    \rhead{Assignment : Mathematical Modeling}
+    % \renewcommand{\headrulewidth}{0.5mm}
+    %% \rfoot{\thepage}
+    \lfoot{By: Akhlak Ansari}
+    \rfoot{\thepage}
+    \renewcommand{\footrulewidth}{1pt}
+
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{7.8cm}
+
+        \textbf{Session: 2022-23}
+
+    \end{center}
+
+    \vspace*{0.5cm}
+
+    \begin{center}
+        \section*{\underline{{\bf MCQ QUESTIONS WITH SOLUTIONS}}}
+    \end{center}
+
+    \begin{enumerate}
+        \item Bacteria in a certain culture increase at a rate proportional to the number present.If the number of bacteria increases from $1000$ to $2000$ in one hour, then find the number of bacteria at the end of $6$ hours. 
+        %\begin{multicols}{2}
+        \begin{enumerate}
+            \item $48000$
+            \item $94000$
+            \item $84000$
+            \item \color{blue}{$64000$}
+        \end{enumerate}
+        %\end{multicols}
+    \end{enumerate}
+
+    \begin{itemize}
+        \item \subsubsection*{\underline{{\bf Hints and Solution:}}}
+    \end{itemize}
+
+    Let $x(t)$ denotes the size(number) of the bacteria at any time $t$. Then, the given problem is governed by the differential equation,
+    \begin{equation*}
+        \frac{dx}{dt} = rx \tag*{(1)}
+    \end{equation*}
+    \[\mbox{Whose solution is given by,}\]
+    
+    \begin{equation}
+         x(t) = x_0 e^{rt} \tag*{(2)}
+    \end{equation}
+
+    where $x_0 = 1000,$ when $t = 0$.
+
+    Again, Since the number of bacteria becomes $2000$ at the end of one hour i.e. 
+
+    $x(1) = 2000$ at $t = 1$, therefore by using the equation(2), we have 
+    \[2000 = 1000 e^{r}\]
+    which gives, 
+    \begin{equation*}
+        e^r = 2 \tag*{(3)}
+    \end{equation*}
+
+    Now, let $x(6)$ be the number of bacteria at the end of $6$ hours, therefore again by using equation(2), we have,
+    \[x(6) = 1000 e^{r(6)} = 1000(2)^6\]
+    \[\mbox{or},\ \ x(6) = 64000\]
+
+    So, (d)  $\color{blue}{64000}$ is the correct option.
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=2.]
+        \item What are the behaviour of the curve in {\bf Exponential population growth} ?
+        \begin{enumerate}
+            \item It's J shaped curve
+            \item It's S shaped curve
+            \item It's a parabolic curve
+            \item It's a hyperbolic curve
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) J shaped curve
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=3.]
+        \item What are the behaviour of the curve in {\bf Logistics population growth} ?
+        \begin{enumerate}
+            \item It's J shaped curve
+            \item It's a hyperbolic curve
+            \item It's a S shaped curve
+            \item it's a Y shaped curve
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (c) S shaped curve
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=4.]
+        \item Which of these is not a {\bf greenhouse gas} ?
+        \begin{enumerate}
+            \item Oxygen
+            \item Methane
+            \item Corbon di-oxide
+            \item Ozone
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) Oxygen
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=5.]
+        \item What do you mean by {\bf Emigration} ?
+        \begin{enumerate}
+            \item Population leaving the space 
+            \item Population comes from outside the space
+            \item Population died
+            \item Population take birth
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) Population leaving the space
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=6.]
+        \item Which of the following counter acts biotic potential ?
+        \begin{enumerate}
+            \item Limitations of food supply
+            \item Predation
+            \item Competition
+            \item All of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (d) All of the Above
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=7.]
+        \item Which of the these pairs are prey-predator model of Lotka-Volterra ?
+        \begin{enumerate}
+            \item $\frac{dx}{dt} = \alpha x + \beta xy$
+            
+
+            $\frac{dy}{dt} = \delta xy - \gamma y$
+            \item $\frac{dx}{dt} = \alpha x + \beta xy$
+            
+
+            $\frac{dy}{dt} = \delta xy + \gamma y$
+            \item $\frac{dx}{dt} = \alpha x - \beta xy$
+            
+
+            $\frac{dy}{dt} = \delta xy - \gamma y$
+            \item $\frac{dx}{dt} = \alpha x - \beta xy$
+            
+
+            $\frac{dy}{dt} = \delta xy + \gamma y$
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (c) \begin{equation*}
+        \begin{split}
+            \frac{dx}{dt} & = \alpha x - \beta xy\\
+            \frac{dy}{dt} & = \delta xy - \gamma y
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=8.]
+        \item Lotka-Volterra model is based on,
+        \begin{enumerate}
+            \item Logistics population growth
+            \item Exponential population growth
+            \item Both (a) and (b)
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) Logistics population growth
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=9.]
+        \item In two species model, what's the meaning of prey and predator ?
+        \begin{enumerate}
+            \item Hunter organisms and hunted organisms
+            \item Hunted organisms and  hunter organisms
+            \item Organisms that are died and organisms that are take birth
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (b) Hunted organisms and  hunter organisms
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=10.]
+        \item Lotka-Volterra prey-predator differential equations are, 
+        \begin{enumerate}
+            \item Non-linear differential equations
+            \item Linear differential equations
+            \item Ordinary differential equations
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) Non-linear differential equations
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=11.]
+        \item What is {\bf Epidemic} ?
+        \begin{enumerate}
+            \item A large long-term outbreak of disease
+            \item A small short-term outbreak of disease
+            \item A large short-term outbreak of disease
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (c) A large short-term outbreak of disease
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=12.]
+        \item In SI Model which is true, 
+        \begin{enumerate}
+            \item $\frac{dS}{dt}+\frac{dI}{dt}=0$
+            \item $\frac{dS}{dt}-\frac{dI}{dt}=0$
+            \item $\frac{dS}{dt}+\frac{dI}{dt}=1$
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) $\frac{dS}{dt}+\frac{dI}{dt}=0$
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=13.]
+        \item Basic reproductive ratio, $R_0$ in SIR Model is given by, 
+        \begin{enumerate}
+            \item $\frac{\beta S_0}{\gamma}$
+            \item $\frac{\gamma S_0}{\beta}$
+            \item $\frac{\beta I_0}{\gamma}$
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+    where, $\beta$ is the transmission contact rate and $\gamma$ is tne mean recovery rate.
+
+    Correct option is, (a)  $\frac{\beta S_0}{\gamma}$
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=14.]
+        \item Most pandemics have arisen from influenza viruses from which of the following animals ?
+        \begin{enumerate}
+            \item Pigs
+            \item Wild birds
+            \item Humans
+            \item Bats
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (b) Wild birds
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=15.]
+        \item SARS is described as a zoonotic-virus, what does this mean ?
+        \begin{enumerate}
+            \item Such viruses are confined to animals
+            \item They do not cause disease in humans
+            \item They cause pandemics
+            \item They emerge from animals to cross the species barrier infrequently
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (d) They emerge from animals to cross the species barrier infrequently
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=16.]
+        \item The area under the serum concentration time curve of the drug represents :
+        \begin{enumerate}
+            \item The biological half life of the drug
+            \item The amount of the drug in the original dosage from
+            \item The amount of drug absorbed
+            \item The amount of drug excreted in the urine
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (c) The amount of drug absorbed
+    
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=17.]
+        \item Time dependent change in drug kinetics is known as:
+        \begin{enumerate}
+            \item Pharmacokinetics
+            \item Chronokinetics
+            \item Drug regulation
+            \item None of the Above
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (b) Chronokinetics
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=18.]
+        \item Which of the following drugs get distributed to the same extent in both lean and adipose tissue:
+        \begin{enumerate}
+            \item Phenytoin
+            \item Digoxin
+            \item Antibiotics
+            \item Caffeine
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (d) Caffeine
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=19.]
+        \item Which of the following is not a mechanism for pharmacokinetics analysis:
+        \begin{enumerate}
+            \item Compartment analysis
+            \item Non-compartment analysis
+            \item Physiologic modeling
+            \item Human model
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (d) Human model
+
+    \vspace*{0.5cm}
+
+    \begin{enumerate}[label=20.]
+        \item Which organs comprise the central compartment in a two compartment model:
+        \begin{enumerate}
+            \item Liver
+            \item Muscles
+            \item Adipose
+            \item Skin
+        \end{enumerate}
+    \end{enumerate}
+
+    Correct option is, (a) Liver
+
+    \begin{itemize}
+        \item For more info regarding this document visit: \url{https://github.com/akhlak919}
+    \end{itemize}
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+\end{document}    

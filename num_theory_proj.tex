@@ -1,0 +1,143 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white!80!green!95!red}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{tikz, tcolorbox,tikzcodeblocks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+%% Another packages
+\usepackage{geometry}
+\geometry{left=25mm, top=30mm}
+
+
+
+
+
+
+\title{\bf NUMBER THEORY AND CRYPTOGRAPHY}
+\author{\bf Akhlak Ansari}
+\date{\bf December 4, 2022}
+
+\begin{document}
+    \maketitle
+
+    \pagestyle{fancy}
+    \color{black}
+    %% \fancyhf{}
+    \lhead{\includegraphics[scale=0.12]{DDU_Logo.png}}
+    \rhead{\color{blue}{Project:Number Theory and Cryptography}}
+    % \renewcommand{\headrulewidth}{0.5mm}
+    %% \rfoot{\thepage}
+    \cfoot{\thepage}
+
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{7.5cm}
+
+        \textbf{Fall' 2022-23}
+
+    \end{center}
+
+    \vspace*{0.13cm}
+
+
+     \begin{center}
+        \section*{\underline{\color{red}{Role of Number Theory in Cryptography}}}
+     \end{center}
+    
+   
+
+    {\bf Number theory} has an important role in Cryptographic foundation.To produce secret messages an send securely and secretly to the recepient in this technological era through internet, we must have knowledge of behaviour of numbers, which is summurize in the branch of mathematics called {\bf Number Theory}.i.e what a number means and what kind of manipulation allows to do with numbers and all other kind of stuffs to encrypt the messages and make their secrecy.
+    So In order to make an intuitive idea of {\bf Cryptography}, we must have a deep knowledge of {\bf Number Theory}.
+
+    \vspace*{0.2cm}
+
+
+    \subsection*{\underline{Pre-Requisites :}}
+    \begin{enumerate}
+        \item Integers
+        \item Divisor
+        \item Division Algorithm
+        \item Greatest Common Divisor / gcd(a,b)
+        \item Least Common Multiple / lcm(a,b)
+        \item Euler totient function / Euler $\phi$ - function
+        \item Congruency
+        \item Encryption
+        \item Decryption
+    \end{enumerate}
+
+    Let's discuss briefly about pre-requisites -
+
+    \begin{tcolorbox}
+        \underline{\bf{1.Integers}}:\\
+
+        The integers is the set of positive and negative counting numbers including zero.
+    
+        It is represented by $\mathbb{Z}$.i.e
+    
+        $$\mathbb{Z} = \left\{\cdots, -3, -2, -1, 0, 1, 2, 3, \cdots\right\}$$
+    
+        \underline{\bf{2.Divisor}}:\\
+    
+        If an integer $n$ can be eritten as a product $k\cdot d = n$ of two integers $k$ and $d$ , then
+        
+        we say that $d$ divides $n$, or that $n$ is divisible by $d$, or that $d$ is a \textbf{divisor} of $n$. i.e
+    
+        $$n = k.d \implies d|n. \ ;\ \forall\ n,k,d \in \mathbb{Z} $$
+    
+        eg. $2|8$, $6|24$, $3|27$ etc.\\
+    
+    
+        We occassionaly choose the term {\bf proper divisor} to denote a positive divisor n 
+        
+        which is not n. When $n = 8$, we see the that $1, 2, 4$ are all proper divisors.
+    \end{tcolorbox}    
+    
+        \pagebreak
+    \begin{tcolorbox}
+        \underline{\bf{3.Division Algorithm}}:\\
+    
+        For $a,b \in \mathbb{Z}$ and $b > 0$, we can always write $a = q\cdot b + r$ with $0\leq r < b$ and $q$ an integer. Moreover, given $a,b$ there is only one pair $q,r$ which satisfies these constraints.We call the first element $q$ the quotient and the second one $r$ the remainder.\\
+    
+        eg. $35 = 6\cdot 5 + 5$ \\
+    
+        \underline{\bf{4.Greatest Common Divisor}}:\\
+    
+        If we consider the various divisors of two numbers $a$ and $b$ , we say that $d$ is a {\bf common divisor} of $a\  \mbox{and}\ b$ if $d|a$ and $d|b$. If $d$ is the bigger such common divisor, it is called the {\bf greatest common divisor}, or gcd of $a$ and $b$ and written as
+        $$d = gcd(a,b)$$
+    
+        eg.  $gcd(3,10) = 1$\\
+    
+        \underline{\bf{5.Least Common Multiple}}:\\
+    
+        Let $a$ and $b$ any two integers not both zero,then an integer $m\geq 1$ is called a {\bf least common multiple} of $a$ and $b$, if the following properties holds,
+        \begin{itemize}
+            \item $a|m$ and $b|m$
+            \item For any integer $n$, if $a|n$ and $b|n$ then $m|n$.
+        \end{itemize}
+    
+        eg.\ $lcm(168,490) = 5880.$\\
+    
+        \underline{\bf{6.Euler $\phi$ - function}}:\\
+    
+        In number theory, Euler's totient function counts the positive integers up to a given integer $n$ that are relatively prime to $n$. It is written using the Greek letter $\phi$ as $\phi(n)$ and may also be called Euler's phi function. In other words, it is the number of integers $k$ in the range $1 \leq k \leq n$ for which the greatest common divisor $gcd(n, k)$ is equal to $1$. The integers $k$ of this form are sometimes referred to as totatives of $n$.
+    
+        $$\phi(n) = \left\{1\leq k \leq n ;\ gcd(n,k) = 1 ;\ \forall k,n\in \mathbb{Z}\right\}$$
+    
+        \begin{center}
+            \includegraphics[scale=0.3]{Euler phi.png}
+        \end{center}
+    \end{tcolorbox}
+
+   
+\end{document}

@@ -1,0 +1,176 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{tikz, tcolorbox,tikzcodeblocks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+%% Another packages
+\usepackage{geometry}
+\geometry{left=25mm, top=30mm}
+\usepackage{physics,romannum}
+\usepackage{import}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+
+
+
+
+
+
+
+\title{{\bf \underline{ASSIGNMENT: RIGID BODY DYNAMICS}}}
+\author{\bf Akhlak Ansari}
+%\date{\bf December 4, 2022}
+
+\begin{document}
+    \maketitle
+
+    \pagestyle{fancy}
+    \fancyfoot{}
+    \color{black}
+    %% \fancyhf{}
+    \lhead{\includegraphics[scale=0.14]{DDU_Logo.png}}
+    \rhead{Assignment:Rigid Body Dynamics}
+    % \renewcommand{\headrulewidth}{0.5mm}
+    %% \rfoot{\thepage}
+    \lfoot{By: Akhlak Ansari}
+    \rfoot{\thepage}
+    \renewcommand{\footrulewidth}{1pt}
+
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{7.5cm}
+
+        \textbf{Session: 2022-23}
+
+    \end{center}
+    
+    \begin{center}
+        \section*{\LARGE{\underline{Question}}}
+    \end{center}
+
+    A finite string has two masses $M$ and $M'$ tied to its end and passes over a rough pulley of mass $m$, whose center is fixed.Then prove that,
+    \[T = T'e^{\mu \pi}\]
+    where $T$ and $T'$, both are tension of string or rope according to motion and $\mu$ is the coefficient of acceleration.
+
+    \vspace*{1cm}
+
+  
+    \section*{\LARGE{\underline{Solution:}}}
+    
+    \vspace*{0.5cm}
+
+    \begin{center}
+        \def\svgwidth{11cm}
+        \input{drawing-1.eps_tex}
+    \end{center}
+
+    Consider a flat belt drive in which the driven pulley is rotating in the clockwise dirrection.
+    
+    Let, $T =\  \mbox{Tension in belt on tight side.}$
+
+    $T' =\ \mbox{Tension in the belt on slack side}$
+
+    and, $\theta =\ \mbox{Angle of contact in radian, i.e. Angle suspended by arc AB along which}$ 
+    
+    the belt touches the pulley at the center.
+
+    Now, consider a small portion PQ of the belt AB, suspending on angle $\delta \theta$ at the center of the pulley.
+
+    The belt PQ is in equilibrium under the following forces,
+    \begin{itemize}
+        \item Tension $T$ in the belt at P.
+        \item Tension $(T + \delta T)$ in the belt at Q.
+        \item Normal reaction, R. and,
+        \item Frictional force, $F = \mu k$,
+        where $\mu$ is the coefficient of friction, between the belt and pulley.
+    \end{itemize}
+
+    Resolving all the forces, vertically we have,
+    \begin{equation*}
+        R = \left(T + \delta T\right)\sin\frac{\delta \theta}{2} + T\sin\frac{\delta \theta}{2} \tag*{(1)}
+    \end{equation*}
+
+    Since, the angle $\delta \theta$ is very small, therefore putting $\sin\frac{\delta \theta}{2} = \frac{\delta \theta}{2}$ in equation(1) we get as,
+    
+    \[R = \left(T + \delta T\right)\cdot \frac{\delta \theta}{2} + T\cdot \frac{\delta \theta}{2}\]
+
+    \[R = T\cdot \frac{\delta \theta}{2} + \delta T \cdot \frac{\delta \theta}{2} + T\cdot \frac{\delta \theta}{2}\]
+
+    \begin{equation*}
+        R = T\cdot \delta \theta \tag*{(2)}
+    \end{equation*}
+
+    Now, Resolving all the forces horizontally, we have,
+    
+    \[F = \left(T + \delta T\right)\cos\frac{\delta \theta}{2} - T\cos\frac{\delta \theta}{2}\]
+
+    \begin{equation*}
+        \implies\ \mu R = \left(T + \delta T\right)\cos\frac{\delta \theta}{2} - T\cos\frac{\delta \theta}{2} \tag*{(3)}
+    \end{equation*}
+
+    Since, the angle $\delta \theta$ is very small, therefore putting $\cos\frac{\delta \theta}{2} = 1$ in equation(3) we get as,
+
+    \[\mu R = \left(T + \delta T\right) - T\]
+
+    \begin{equation*}
+        \implies\ R = \frac{\delta T}{\mu} \tag*{(4)}
+    \end{equation*}
+
+    equating the value of R from equation(2) and equation(4), we get as,
+
+    \[T\cdot \delta \theta = \frac{\delta T}{\mu} \]
+    \[\frac{\delta T}{T} = \mu \cdot \delta \theta\]
+
+    Integrating, both sides, within the limit $T'$ and $T$ and from $0$ to $\theta$ respectively, we get as,
+
+    \[\int_{T'}^{T}\frac{dT}{T} = \int_{0}^{\theta}\mu \cdot d\theta\]
+    
+    \[\implies\ \log\left(\frac{T}{T'}\right) = \mu \theta\]
+    \[\implies\ \frac{T}{T'} = e^{\mu \theta}\]
+
+    \[\implies\ \boxed{T = T'e^{\mu \theta}}\]
+    %%Add the diagram
+
+    \begin{center}
+        \def\svgwidth{5cm}
+        \input{drawing-2.eps_tex}
+    \end{center}
+
+    \begin{center}
+        from this diagram $\theta = \pi$
+    thus, 
+    \[\boxed{T = T'e^{\mu \pi}}\]
+
+    Hence, we have the result.
+    \end{center}
+
+    \section*{References:}
+
+    For raw data of document, please visit: \url{https://github.com/akhlak919}
+
+
+    
+
+   
+  
+
+   
+
+    
+
+\end{document}        

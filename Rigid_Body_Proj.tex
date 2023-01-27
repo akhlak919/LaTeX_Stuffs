@@ -1,0 +1,248 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{tikz, tcolorbox,tikzcodeblocks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+%% Another packages
+\usepackage{geometry}
+\geometry{left=25mm, top=30mm}
+\usepackage{physics,romannum}
+\usepackage{import}
+
+
+
+
+
+
+
+\title{{\bf \underline{PROJECT: RIGID BODY DYNAMICS}}}
+\author{\bf Akhlak Ansari}
+%\date{\bf December 4, 2022}
+
+\begin{document}
+    \maketitle
+
+    \pagestyle{fancy}
+    \fancyfoot{}
+    \color{black}
+    %% \fancyhf{}
+    \lhead{\includegraphics[scale=0.14]{DDU_Logo.png}}
+    \rhead{Project:Rigid Body Dynamics}
+    % \renewcommand{\headrulewidth}{0.5mm}
+    %% \rfoot{\thepage}
+    \lfoot{By: Akhlak Ansari}
+    \rfoot{\thepage}
+    \renewcommand{\footrulewidth}{1pt}
+
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+       
+        \vspace{8.5cm}
+
+        \textbf{Session: 2022-23}
+
+    \end{center}
+
+    \begin{center}
+        \section*{\LARGE{{\bf RIGID BODY }}}
+        \section*{\underline{\LARGE{{\bf PROPERTIES , EXAMPLE AND MOTION }}}}
+    \end{center}
+
+    \subsection*{\underline{PRE-REQUISITES:}}
+    \begin{enumerate}
+        \item Rigid Body
+        \item External and Internal Forces
+        \item Finite Forces
+        \item Impulsive Forces
+    \end{enumerate}
+
+    
+    \subsection*{{\bf \underline{1. Rigid Body:}}}
+
+    A system of particles is called rigid body if following conditions are satisfied,
+    \begin{itemize}
+        \item The distance between any two consecutive particles is microscopically small or infinitesimally small.
+        \item The distance between any two particles does not change due to any external force.
+        \item As each particle exerts action on its neighbouring particle due to in contact with it an equal reaction is introduced in the opposite dirrection such that resultant of all such action and  reaction must be zero.
+    \end{itemize}
+    \subsection*{\underline{\bf Elements of Rigid Body:}}
+    An element is a smallest part of the body such that the rigid body can be divided into large number of such similar part and when all these elements are combined in rigid body regains its original shape.
+
+    If $M$ is the mass of rigid body then,
+    \[\sum m = m_1 + m_2 + m_3 + \cdots \cdots \cdots + m_n + \cdots \cdots\ = M\]
+    where, $m_1, m_2, m_3, \cdots \cdots \cdots , m_n, \cdots \cdots \cdots$ are masses of different elements of the rigid body.
+
+    \subsection*{{\bf \underline{2. External Forces:}}}
+
+    External forces are forces applied to the structure from the outside of the structure.
+
+    \subsection*{{\bf \underline{3. Finite Forces:}}}
+    An external force which acts for sufficient or finite time period is called Finite Force.
+    Example : Let a particle of a rigid body be in motion for 10 minutes under force which acts for 5 minutes only.
+
+
+
+    Even then this force can be called a Finite Force.
+
+    \subsection*{{\bf \underline{4. Impulsive Forces:}}}
+
+    An external force which acts for infinitesimal small time period but the motion may exist for sufficiently long time period is called Impulsve Force.
+
+    Example : When a stick hits a ball, the ball moves for a long time but the time period of contact of stick with the ball is very short.
+
+    \subsection*{\underline{Center of Mass of a Rigid Body:}}
+
+    We deal with rigid bodies consisting of several particles, let us consider a simpler case.Suppose we have a system of two particles have same mass joint by weightless and inextensible rod.In this system , the distance between the two particles is fixed.So it is a rigid body.
+
+    \vspace*{0.4cm}
+
+    \begin{center}
+        \def\svgwidth{10cm}
+        \input{drawing.eps_tex}
+    \end{center}
+
+    Suppose that the two particles are at height $z_1$ and $z_2$ from a horizontal surface(see figure). suppose further that the gravitational force is uniform in the small region in which the two particles move about.
+
+    The force on each particles will be $mg$. The total force action on the system is therefore $2mg$.
+
+    We have now to find a point $c$ somewhere in the system so that if a force $2mg$ act at the point located at a height $z$ from the horizontal surface. The motion of the system would be same as with two force. The potential energy of particles $1 \ \mbox{and}\ 2$ are $mgz_1$ and $mgz_2$ respectively.
+
+    The potential energy of the particle at $c$ is $2mgz$.
+
+    Since this must be equal to the combined potential energy of the two particles , can write,
+
+    \begin{equation*}
+        2mgz = mgz_1 + mgz_2 \tag*{(1)}
+    \end{equation*}
+    \[z = \frac{z_1 + z_2}{2}\]
+    Note that the point $c$ lies mid way between the two particles.If the two masses were unequal, this point would not have been in the middle. If the mass of particle 1 is $m_1$ and that of particle 2 is $m_2$ then equation(1) becomes,
+
+    \[\left(m_1 + m_2\right)gz = m_1gz_1 + m_2gz_2\]
+    so that,
+    \[z = \frac{m_1z_1 + m_2z_2}{m_1 + m_2}\]
+
+    point $c$ is called the center of mass of the system.
+
+    \section*{\underline{Properties of Rogid Body:}}
+
+    The properties of a rigid body influence its characterstics including colliding behaviour, sliding, speed, resistance and bounciness behaviour.
+
+    \subsection*{\underline{Friction:}}
+
+    Friction is the roughness of the surface which generates resistance force and causes a change in speed in objects that slide over it.
+
+    \subsection*{\underline{Elasticity:}}
+
+    Elasticity defines the bouncing force of a rigid body. The higher the value  , the more the object bounces off, when it collides with some other physical objects.
+
+    \subsection*{\underline{Damping:}}
+
+    The damping value in consideration can be taken as air resistance.
+    The damping value affects soft bodies tremendously.
+    You may use this value to produce a feather or cloth to slowlly fall down.\
+
+    \pagebreak
+
+    \section*{\underline{Example:}}
+
+    A cannon of mass $M$ resting on a rough horizontal plane of coefficient of friction $\mu$ is fixed with such a change that the relative velocity of the ball of the cannon at the momentum when it leaves the cannon is $'u'$. Show that the cannon will recoils a distance $\left(\frac{mu}{M + m}\right)^2\cdot \frac{1}{2\mu g}$ along the plane , where $m$ is the mass of the ball.
+
+    \subsection*{\underline{Solution:}}
+
+    Let $V$ be the velocity of cannon with which it recoils and $v$ be the velocity of ball.It is given by,
+
+    \[v-(-V) = u\]
+    \begin{equation*}
+        \implies v + V = u \tag*{(1)}
+    \end{equation*}
+
+    Also there is no external force, so there is no change in momentum of the system. 
+
+    Hence momentum of the system remains same before and after firing.Then,
+    \[0 = p_{\mbox{cannon}} + p_{\mbox{ball}}\]
+    \[\implies\ \bigg|p_{\mbox{cannon}}\bigg| + \bigg|p_{\mbox{ball}}\bigg|\]
+    \[\implies\ MV = mv \]
+    \begin{equation*}
+        \implies\ v = \frac{MV}{m} \tag*{(2)}
+    \end{equation*}
+    \begin{center}
+        Using equation(2) in equation(1) we have,
+        \[\frac{MV}{m} + V = u\]
+        \[\implies\ V\left(\frac{M+m}{m} \right) = u\]
+        \[\implies\ V = \frac{mu}{M + m}\]
+        Again, on the rough plane equation of motion of cannon is,
+        \[M\ddot{x} = -\mu R = -\mu mg\]
+        \[\implies\ \ddot{x} = -\mu g\]
+        Here $x$ is the distance cannon has recoiled.
+
+
+        Multiplying by $2\dot{x}$ both sides and integrating with respect to $t$, we get as,
+        \[\int \ddot{x} 2\dot{x}dt = -\int \mu g 2\dot{x}dt\]
+        \[(\dot{x})^2 = -2\mu gx + C\]
+        At $x = 0,  \dot{x} = -V$
+
+
+        $(-V)^2 = -2\mu g\times 0 + C$
+
+
+        $\implies\ C = V^2$
+
+        thus our expression turns out as,
+        \[(\dot{x})^2 = -2\mu gx + V^2\]
+        \[(\dot{x})^2 = V^2 - 2\mu gx\]
+        Now, when cannon comes to rest,
+        \[\dot{x} = 0\]
+        \[\implies\ x = \frac{V^2}{2\mu g}\]
+        \[\mbox{Since,}\ V = \frac{mu}{M+m}\ \mbox{then,}\]
+        \boxed{x = \left(\frac{mu}{M+m}\right)^2\cdot \frac{1}{2\mu g}}
+
+        \vspace*{0.2cm}
+        This is the required distance that cannon recoils.
+    \end{center}
+    
+    \vspace*{1.5cm}
+
+    \section*{\underline{Motion of Rigid Body:}}
+
+    \subsection*{\underline{Translational Motion:}}
+
+    When a rigid body moves in such a way that all its particles moves along parallel paths, its motion is called $'\mbox{Translational Motion}'.$
+
+    Since all the particles execute identical motion, its center of mass must also be tracing out of identical path.
+
+    Therefore, the translational motion of a body may be characterised by the motion of its center of mass.
+    \[\boxed{Ma = F_{\mbox{ext.}}}\]
+
+    \subsection*{\underline{Rotational Motion:}}
+
+    The motion of a rigid body in which all its constituent particles describe concentric circular paths is known as $'\mbox{Rotational Motion}'.$
+
+    In the rotational motion equation of motion of rigid bode is given by,
+
+    \[\boxed{F = I\omega^2}\]
+
+    \pagebreak
+
+    \section*{\underline{Applications of Rigid Body Motion:}}
+
+    \begin{itemize}
+        \item For the analysis of robotic systems.
+        \item For the analysis of space objects and their motion.
+        \item For the understanding of strange motions of rigid bodies.
+        \item For the bio-mechanical analysis of animals,humans and humanoid systems.
+    \end{itemize}
+
+
+
+\end{document}

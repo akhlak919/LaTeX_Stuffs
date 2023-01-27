@@ -1,0 +1,1176 @@
+\documentclass[a4paper,12pt]{article}
+% Set Margins according as you want.
+% \usepackage[a4paper, left=1in, right=1in, bottom=1in, top=1in]{geometry}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\color{black}
+\lhead{\includegraphics[scale=0.13]{DDU_Logo.png}}
+\rhead{Assignment: Banach Spaces}
+%\cfoot{Page \thepage}
+\lfoot{By: Akhlak Ansari}
+\rfoot{\thepage}
+\renewcommand{\footrulewidth}{1pt}
+\usepackage{tikz, tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+\usepackage{physics}
+\usepackage{romannum}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+
+
+
+
+\title{\underline {\sc {\textbf ASSIGNMENT: BANACH SPACES}}}
+
+\author{\textbf{Akhlak Ansari}}
+
+\begin{document}
+    \pgfplotsset{compat=1.17}
+    \color{black}
+
+    \maketitle 
+
+         
+    
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+    \end{center}
+
+
+
+    \vspace*{7cm}
+
+
+    \begin{center}
+        \textbf{$\mbox{Session}\ :\ 2022-23$ }
+    \end{center}
+
+    \section*{\LARGE{\underline{\bf {Assignment Questions:}}}}
+
+    \begin{center}
+        \LARGE{{\underline{\bf Assignment \Romannum{1}}}}
+    \end{center}
+
+    \begin{enumerate}
+        \item {\bf (Theorem):} A normed space $X$ is a Banach space iff every absolutely summable sequence in $X$, is summable in $X$.
+        \item  {\bf (Problem):} Let $C[a,b]$ be the linear space of all scalar valued continuous functions defined on $[a,b]$. Define $\mathbf{\norm{\cdot}_{\infty} : C[a,b] \to \mathbb{R}}$ by 
+        \[\norm{x}_{\infty} = \displaystyle \max_{t \in [a,b]} |x(t)|\] 
+        then $\left(C[a,b],\norm{\cdot}_{\infty}\right)$ is a Banach space.
+        \item {\bf (Theorem):} Prove that linear space $l^{p}_n$, $1\leq p < \infty$ given by 
+        \[\norm{x}_p = \left(\sum_{i=1}^{n}|\xi_i|^p\right)^{\frac{1}{p}}\] is a Banach space.
+        \item {\bf (Problem):} The real linear space $C[-1,1]$ equipped with the norm given by 
+        \[\norm{x}_1 = \int_{-1}^{1} |x(t)|dt\]
+        where integral is taken in the sense of Riemann, is the incomplete normed space.
+        \item {\bf (Theorem):} Prove that linear space $\mathbb{R}^n$, equipped with the norm given by 
+        \[\norm{x} = \left(\sum_{i=1}^{n}|\xi_i|^2\right)^{\frac{1}{2}}\] where, $x = \left(\xi_1\ \xi_2\ \cdots \cdots\xi_n\right)\in \mathbb{R}^n$ is a real Banach space.
+        \item {\bf (Theorem):} Let $X$ be a normed space over the field $K$ and let $M$ be a closed subspace of $X$.
+        
+        Define $\norm{\cdot}_q : X/M \to \mathbb{R}$ by 
+        \[\norm{x+M}_q = \mbox{inf}\cdot \biggl\{\norm{x + m} : m\in M\biggr\}\]
+        then $\left(X/M\  ,\ \norm{\cdot}_q \right)$ is a normed space. Further, if $X$ is a Banach space, then $X/M$ is a Banach space.
+    \end{enumerate}
+
+    \pagebreak
+
+    \begin{center}
+        \LARGE{{\underline{\bf Assignment \Romannum{2}}}}
+    \end{center}
+
+    \begin{enumerate}
+        \item {\bf (Problem):} Give the example of linear functional on different normed linear spaces for bounded linear functional.
+        \item {\bf (Problem):} Define the functional $f : \mathbb{R}^{n}\to \mathbb{R}$ by 
+        \[f(x) = x - a\]
+        where, $x = \left(\xi_1\ \xi_2\ \cdots \cdots\xi_n\right)\in \mathbb{R}^n$ and $x\cdot a$ denotes the familiar scalar product of $x$ and $a$. Then $f$ is bounded linear functional on $\mathbb{R}^n$ with
+        \[\norm{f} = \norm{a}\] 
+        \item Give examples for unbounded linear functional.
+    \end{enumerate}\
+
+    \pagebreak
+
+    \begin{center}
+        \section*{\underline{\LARGE{{\bf Solutions of Assignment \Romannum{1}}}}}
+    \end{center}
+
+    \subsection*{\underline{Solution of Question No.1(Theorem):}}
+
+    \subsubsection*{\underline{{\bf Statement:}}}
+
+    A normed space $X$ is a Banach space iff every absolutely summable sequence in $X$  is summable in $X$.
+
+    \vspace*{0.5cm}
+
+    \subsubsection*{\underline{{\bf Proof:}}}
+
+    Assume that $X$ is a Banach space.
+
+    Let $\left\{x_n\right\}$ be an absolutely summable sequence in $X$, then
+    \[\sum_{n=1}^{\infty}\norm{x_n} = M < \infty\]
+    \begin{center}
+        thus, for each $\epsilon > 0 , \exists\  N\ \mbox{such that}$
+        \[\sum_{n=N}^{\infty}\norm{x_n} < \epsilon\]
+        Let $S_n = \sum_{k=1}^{n}x_k$ be the partial sums of the series $\sum_{k=1}^{\infty}x_k$, then
+        \begin{equation*}
+            \begin{split}
+                \norm{S_n - S_m} & = \norm{\sum_{k=m+1}^{n}x_k}\\
+                & \leq \sum_{k=m+1}^{n}\norm{x_k}\\
+                & \leq \sum_{k=N}^{\infty}\norm{x_k},\ \ n > m > N\\
+                & < \epsilon\ , \ \ n > m > N
+            \end{split}
+        \end{equation*}
+        \[\implies \boxed{\norm{S_n - S_m}  < \epsilon\ ,\ \ \ n > m > N}\]
+        thus, $\left\{S_n\right\}$ is a Cauchy sequence in $X$ and must converges to some point $S$(say) in $X$.
+        Since $X$ is complete.
+        \[\implies \left\{x_n\right\}\ \mbox{is summable in}\ X. \]
+    \end{center}
+
+    {\bf Conversely,} Suppose that each absolutely summable sequence in $X$ is summable in $X$.
+
+    We have to show that $X$ is complete.
+
+    Let $\left\{x_n\right\}$ be a Cauchy sequence in $X$, then for each $k ,\  \exists$ an integer $n_k$ such that 
+    \[\norm{x_n - x_m} < \frac{1}{\alpha^k}\ ,\ \ \forall\ n,m \geq n_k\] 
+    \begin{center}
+        we may assume $n_k$ such that $n_{k+1} > n_{k}$.
+        then, $\left\{x_{n_k} \right\}$ is a subsequence of $\left\{x_n\right\}$.
+
+        \pagebreak
+
+        \begin{equation*}
+            \begin{split}
+                \mbox{set},\ y_0 & = x_{n_1}\\
+                y_1 & = x_{n_2}\\
+                y_2 & = x_{n_3}\\
+                \cdots \cdots \cdots & \cdots \cdots \cdots \cdots \cdots\\
+                \cdots \cdots \cdots & \cdots \cdots \cdots \cdots \cdots\\
+                y_k & = x_{n_{k+1}}- x_{n_k}\\
+                \cdots \cdots \cdots & \cdots \cdots \cdots \cdots \cdots\\
+                \cdots \cdots \cdots & \cdots \cdots \cdots \cdots \cdots\\
+            \end{split}
+        \end{equation*}
+    \end{center}
+
+    From this we note that,
+    \begin{itemize}
+        \item $\sum_{i=0}^{k}y_i = x_{n_{k+1}}$
+        \item $\norm{y_k} < \frac{1}{\alpha^k}\ ,\ \ k\geq 1$
+    \end{itemize}
+
+    and as such,
+
+    \[\sum_{k=0}^{\infty}\norm{y_k} \leq \norm{y_0} + \sum_{k=1}^{\infty}\frac{1}{\alpha^k} = \norm{y_0} + 1 < \infty\]
+
+    Consequently, the sequence $\left\{y_k\right\}$ is absolutely summable to some element (say) $x$ in $X$.therefore we have,
+    \[x_{n_k}\to x\ \in X\ \mbox{and}\ k\to \infty\]
+
+    thus, the Cauchy sequence $\left\{x_n\right\}$ in $X$ has a convergent subsequence $\left\{x_{n_k}\right\}$ converging to $x$.
+
+    hence,
+    \[\lim_{n\to \infty} x_n \to x\]
+    \[\mbox{or,}\ \lim_{n\to \infty}x_n = x\ \mbox{as}\ n\to \infty\]
+    \begin{center}
+        Thus $X$ is a Banach Space.
+    \end{center}
+    
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.2(Problem):}}
+
+    \subsubsection*{\underline{{\bf Statement:}}}
+
+    Let $C[a,b]$ be the linear space of all scalar valued continuous functions defined on $[a,b]$. Define $\mathbf{\norm{\cdot}_{\infty} : C[a,b] \to \mathbb{R}}$ by 
+        \[\norm{x}_{\infty} = \displaystyle \max_{t \in [a,b]} |x(t)|\] 
+        then $\left(C[a,b],\norm{\cdot}_{\infty}\right)$ is a Banach space.
+
+    \vspace*{0.5cm}
+
+    \subsubsection*{\underline{{\bf Solution:}}}
+
+    Consider the linear space $C[a,b]$ of all scalar valued(real or complex) continuous functions, defined on $[a,b]$.
+
+    Define,
+    \[\norm{\cdot}_{\infty} : C[a,b]\to \mathbb{R} \hspace*{1cm}  \mbox{by,}\ \]
+
+    \[\norm{x}_{\infty} = \displaystyle \max_{t \in [a,b]} |x(t)| \]
+
+    \begin{center}
+        \def\svgwidth{8cm}
+    \input{drawing-4.eps_tex}
+    \end{center}
+
+    Now, first we have to show that $C[a,b]$ is normed linear space on $\norm{\cdot}_{\infty}$.
+
+    \[\mbox{i.e.}\hspace*{2cm} N_1: \hspace*{0.5cm} \norm{x}_{\infty} = \displaystyle \max_{t \in [a,b]} |x(t)| \geq 0\]
+
+    It is obvious thing because our function is a modulus function.
+
+    \begin{center}
+        \begin{equation*}
+            \begin{split}
+                N_2: \hspace*{0.5cm} \norm{x}_{\infty} & = \displaystyle \max_{t \in [a,b]} |x(t)| = 0\\[2mm]
+                & \Leftrightarrow\  |x(t)| = 0 \hspace*{2cm} \forall\ t
+            \end{split}
+        \end{equation*}
+    \end{center}
+
+    \pagebreak
+
+    \begin{center}
+        \begin{equation*}
+            \begin{split}
+                & \Leftrightarrow\ x(t) = 0 \hspace*{2cm} \forall\ t\\
+                & \Leftrightarrow\ x = (0,0,0,0,\cdots \cdots ,t\  \mbox{times}) = 0\\
+                & \Leftrightarrow\ x = 0
+            \end{split}
+        \end{equation*}
+    \end{center}
+
+    \begin{equation*}
+        \begin{split}
+            N_3: \hspace*{0.5cm} \norm{x + y}_{\infty} & = \displaystyle \max_{t \in [a,b]} |x(t) + y(t)|\\[2mm]
+            & \leq\ \displaystyle \max_{t \in [a,b]}\left\{ |x(t)| + |y(t)|\right\}\\[2mm]
+            & \leq\ \displaystyle \max_{t \in [a,b]} |x(t)| + \displaystyle \max_{t \in [a,b]} |y(t)|\\[2mm]
+            & \leq\ \norm{x}_{\infty} + \norm{y}_{\infty}
+        \end{split}
+    \end{equation*}
+
+    \[\mbox{i.e.}\ \hspace*{0.7cm} \boxed{\norm{x + y}_{\infty} \leq\ \norm{x}_{\infty} + \norm{y}_{\infty}}\]
+
+    \begin{center}
+        $N_4:\hspace*{0.5cm}  \mbox{For any scalar}\  \alpha \in \mbox{(field)}\  K.$
+    \end{center}
+
+    \begin{equation*}
+        \begin{split}
+            \norm{\alpha \cdot x}_{\infty} & = \displaystyle \max_{t \in [a,b]} |\alpha \cdot x(t)|\\[2mm]
+            & =   \displaystyle \max_{t \in [a,b]} |\alpha| \cdot |x(t)|\\[2mm]
+            & = |\alpha| \cdot \displaystyle \max_{t \in [a,b]} |x(t)|\\[2mm]
+        \end{split}
+    \end{equation*}
+
+    \[\Rightarrow\  \boxed{\norm{\alpha \cdot x}_{\infty}  = |\alpha| \cdot \norm{x}_{\infty}}\]
+    \vspace*{0.3cm}
+
+    It follows that $C[a,b]$ is a {\bf normed linear space} under the above defined norm.
+
+    \vspace*{0.4cm}
+
+    Now, we have to show that $C[a,b]$ is complete under this norm.
+
+    Let $\left\{x_m\right\}$ be a Cauchy-sequence in $[a,b]$, then for each $\epsilon > 0,\ \exists$ a positive integer $N$ such that,
+    
+    \begin{equation*}
+        \norm{x_m - x_n}_{\infty} = \displaystyle \max_{t \in [a,b]} |x_m (t) - x_n (t)| <\  \epsilon\, \hspace*{2cm} \forall\ m,n \geq N  \tag*{(1)}
+    \end{equation*}
+
+    therefore for any fixed $t = t_0 \in [a,b]$, we get,
+    
+    \[|x_m(t_0) - x_n(t_0)| < \epsilon\, \hspace*{5cm} \forall\ m,n \geq N \]
+
+    This shows that $x_m(t_0)$ is a Cauchy-sequence in $K$, but $K$ being complete, this sequence converges.
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    Let $x_m(t_0)\to x(t_0)$ as $m\to \infty$, In this manner we can associate to each $t\in [a,b]$ an unique $x(t)\in K$.
+
+    This defines a pointwise function $x$ on $[a,b]$.
+
+    \vspace*{0.4cm}
+    Now, we have to show that $x\in C[a,b]$ and $x_m\to x$, from equation(1) we have,
+
+    \[|x_m(t) - x_n(t)| < \epsilon\, \hspace*{2cm} \forall\ m,n \geq N\ \mbox{and}\ \forall\ t\in [a,b] \]
+
+    Taking $n\to \infty$ we get as,
+
+    \begin{equation*}
+        |x_m(t) - x(t)| \leq\  \epsilon\, \hspace*{2cm} \forall\ m \geq N\ \mbox{and}\ \forall\ t\in [a,b] \tag*{(2)}
+    \end{equation*}
+
+    This verifies that the sequence $\left\{x_m\right\}$ of continuous functions converges uniformly to the function $x$ on $[a,b]$. And hence the limit function $x$ is a continuous function on $[a,b]$ such as $x\in [a,b]$.
+
+    Also, from equation(2) we have,
+
+    \begin{equation*}
+        \begin{split}
+            \displaystyle \max_{t \in [a,b]} |x_m(t) - x(t)| & \leq\ \epsilon \hspace*{1cm} \forall\ m\geq N\\[2mm]
+            \Rightarrow\ \norm{x_m -x}_{\infty} & \leq\ \epsilon \hspace*{1cm}\forall\ m \geq N\\[2mm]
+            \Rightarrow\ x_m\to x\ & \mbox{in}\ C[a,b]
+        \end{split}
+    \end{equation*}
+
+    Hence, $\left(C[a,b], \norm{\cdot}_{\infty}\right)$ is a {\bf Banach space}.\
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.3(Theorem):}}
+
+    \subsubsection*{\underline{{\bf Statement:}}}
+
+    Prove that linear space $l^{p}_n$, $1\leq p < \infty$ given by 
+    \[\norm{x}_p = \left(\sum_{i=1}^{n}|\xi_i|^p\right)^{\frac{1}{p}}\] is a Banach space.
+
+    \vspace*{0.5cm}
+
+    \subsubsection*{\underline{{\bf Proof:}}}
+
+    The linear space $l^{p}_n$ equipped with the norm given by,
+    \[\norm{x}_p = \left(\sum_{i=1}^{n}|\xi_i|^p\right)^{\frac{1}{p}}\]
+    first we have to show that $l^{p}_n$ is the normed linear space.
+
+    \vspace*{0.5cm}
+
+    $N_1:$ \hspace*{4cm} Since,\  $\forall\ \hspace*{0.5cm} |\xi_{i}| \geq 0$
+
+    \begin{equation*}
+        \begin{split}
+            \Rightarrow\ \sum_{i=1}^{n} |\xi_{i}| & \geq 0\\[2mm]
+            \Rightarrow\ \left(\sum_{i=1}^{n}|\xi_i|^p\right)^{\frac{1}{p}} & \geq 0\\[2mm]
+            \Rightarrow\ \norm{x}_p & \geq 0 \hspace*{2cm} \forall\ x\in l^{p}_n
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.5cm}
+
+    $N_2:\hspace*{4cm} \norm{x}_p = 0$
+
+    \begin{equation*}
+        \begin{split}
+            \Leftrightarrow\ \left(\sum_{i=1}^{n}|\xi_i|^p\right)^{\frac{1}{p}} & = 0\\[2mm]
+            \Leftrightarrow\ \sum_{i=1}^{n} |\xi_{i}|^p & = 0\\[2mm]
+            \Leftrightarrow\ |\xi_{i}| & = 0 \hspace*{2cm} \forall\ i = 1, 2, \cdots \cdots , n\\[2mm]
+            \Leftrightarrow\ \xi_{i} & = 0 \hspace*{2cm} \forall\ i = 1, 2, \cdots \cdots , n\\[2mm]
+            \Leftrightarrow\ \left(\xi_1, \xi_2, \cdots \cdots \cdots, \xi_n\right) & = 0\\[2mm]
+            \Leftrightarrow\ x & = 0\\[2mm]
+            \norm{x}_p = 0 & \Leftrightarrow\ x = 0
+        \end{split}
+    \end{equation*}
+    
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    \begin{equation*}
+        \begin{split}
+            N_3:\hspace*{4cm} \mbox{Let}\ x & = \left(\xi_1, \xi_2, \cdots \cdots \cdots, \xi_n\right)\\[2mm]
+            y & = \left(\eta_1,\eta_2, \cdots \cdots \cdots , \eta_n\right)\ \mbox{be any two members of}\ l^n_{p}\\[2mm]
+            \Rightarrow\ \norm{x + y}_p & = \norm{\left(\xi_1 ,\xi_2, \cdots \cdots \cdots, \xi_n\right) + \left(\eta_1,\eta_2, \cdots \cdots \cdots, \eta_n\right)}\\[2mm]
+            & = \norm{\left(\xi_1 + \eta_1\right),\left(\xi_2 + \eta_2\right), \cdots \cdots \cdots, \left(\xi_n + \eta_n\right)}\\[2mm]
+            & = \left(\sum_{i=1}^{n}|\xi_i + \eta_i|^p\right)^\frac{1}{p}\\[2mm]
+            \mbox{Using}\  & \mbox{Minkowski inequaliity(finite form)}\\[2mm]
+            & \leq\ \left(\sum_{i=1}^{n}|\xi_i|^p\right)^\frac{1}{p} + \left(\sum_{i=1}^{n}|\eta_i|^p\right)^\frac{1}{p}\\[2mm]
+            \Rightarrow\ & \boxed{\norm{x + y}_p  \leq\  \norm{x}_p + \norm{y}_p} \hspace*{3cm} \forall\ x,y\in l^p_{n}
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.5cm}
+
+    $N_4:\hspace*{2cm} \mbox{Let}\ \alpha\ \mbox{be any scalar and}\ x\ \mbox{is an arbitrary element of}\ l^p_{n}$. then,
+
+    \begin{equation*}
+        \begin{split}
+            \norm{\alpha \cdot x}_p & = \norm{\alpha \cdot \left(\xi_1,\xi_2, \cdots \cdots \cdots, \xi_n\right)}\\[2mm]
+            & = \norm{\left(\alpha \xi_1, \alpha \xi_2, \cdots \cdots \cdots, \alpha \xi_n\right)}\\[2mm]
+            & = \left(\sum_{i=1}^{n} |\alpha \cdot \xi_i|^p\right)^\frac{1}{p}\\[2mm]
+            & = \left(\sum_{i=1}^{n} |\alpha|^p \cdot |\xi_i|^p\right)^\frac{1}{p}\\[2mm]
+            & = \left(|\alpha|^p\right)^\frac{1}{p} \left(\sum_{i=1}^{n}  |\xi_i|^p\right)^\frac{1}{p}\\[2mm]
+            \Rightarrow\ & \boxed{\norm{\alpha \cdot x}_p = |\alpha| \cdot \norm{x}_p} \hspace*{3cm} \forall\ x\in l^p_{n}
+        \end{split}
+    \end{equation*}
+    \vspace*{1cm}
+
+    Thus $l^p_{n}$ togather with the norm $\norm{\cdot}_p$ i.e $\left(l^p_{n}, \norm{\cdot}_p\right)$ is a {\bf normed linear space}.
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+    Now, in order to show that $l^p_{n}$ are Banach space, we have to prove their completenness, with respect to the norm defined above.
+
+    \vspace*{0.2cm}
+
+    Let $\left\{x_m\right\}$ be a Cauchy-sequence in $l_n^{p}$.
+
+    where $x_m = \left\{\xi_1^{(m)}, \xi_2^{(m)}, \cdots \cdots \cdots, \xi_n^{(m)}\right\} \in K^n$
+
+    Then for each $\epsilon > 0,\ \exists$ a positive integer $N$ such that
+    \begin{equation*}
+        \begin{split}
+            \norm{x_m -x_k} & = \left(\sum_{i=1}^{n}|\xi_i^{(m)} - \xi_i^{(k)}|^p\right)^\frac{1}{p} < \epsilon \hspace*{2cm} \forall\ m,k\geq N\\[2mm]
+            & = \sum_{i=1}^{n} |\xi_i^{(m)} - \xi_i^{(k)}|^p < \epsilon^p \hspace*{2cm} \forall\ m,k\geq N \\[2mm]
+            & = |\xi_i^{(m)} - \xi_i^{(k)}| < \epsilon \hspace*{2cm} \forall\ m,k \geq N ;\ i = 1,2,\cdots \cdots \cdots, n
+        \end{split}
+    \end{equation*}
+
+    This shows that for fixed $(1\leq i \leq n)$ the sequence $\left\{\xi_i^{(m)}\right\}_{m=1}^{\infty}$ is a Cauchy-sequence in $K$.
+
+    Since $K$ is complete, it is converges in $K$.
+
+    Let $\xi_i^{(m)}\to \xi_i$ as $m\to \infty$
+
+    Using these, we define $n$ limits as
+
+    \[x = \left(\xi_1,\xi_2, \cdots \cdots \cdots , \xi_n\right)\in l_n^{p}\]
+
+    Now,
+
+    \[\norm{x_m -x_k}  = \left(\sum_{i=1}^{n}|\xi_i^{(m)} - \xi_i^{(k)}|^p\right)^\frac{1}{p} < \epsilon \hspace*{2cm} \forall\ m,k\geq N\]
+
+    Taking $K\to \infty$ we have,
+
+    \[\norm{x_m -x}_p < \epsilon \hspace*{2cm} \forall\ m\geq N\]
+    \[\Rightarrow\ x_m\to x\ \mbox{in}\ l_n^{p}\]
+
+    Hence, $l_n^{p}$ is complete and therefore it is a {\bf Banach Space}.
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.4(Problem):}}
+
+
+    \begin{tcolorbox}
+        \subsubsection*{\underline{{\bf Statement:}}}
+
+    The real linear space $C[-1,1]$ equipped with the norm given by 
+    \[\norm{x}_1 = \int_{-1}^{1} |x(t)|dt\]
+    where integral is taken in the sense of Riemann, is the incomplete normed space. 
+
+    \vspace*{0.2cm}
+
+    \begin{center}
+        \def\svgwidth{10cm}
+        \input{drawing-5.eps_tex}
+    \end{center}
+    \end{tcolorbox}
+
+    \subsubsection*{\underline{{\bf Solution:}}}
+
+    First of all we must show that $C[-1,1]$ is a normed linear space with respect to norm $\norm{\cdot}_1$.
+
+    \[N_1:\hspace*{3cm} \norm{x}_1 = \int_{-1}^{1}|x(t)|dt \geq 0\hspace*{2cm} \forall\ x\in C[-1,1]\]
+
+    \begin{center}
+        Since our integrand is modulus function, so it's an obvious case and hence there is nothing to do more.
+    \end{center}
+
+    \vspace*{0.3cm}
+
+    \[N_2:\hspace*{3cm} \norm{x}_1 = \int_{-1}^{1}|x(t)|dt = 0\ \Leftrightarrow\ 0 \hspace*{2cm} \forall\ x\in C[-1,1]\]
+
+    \begin{center}
+        It is also very straightforward thing and there nothing to do more.
+    \end{center}
+
+    \pagebreak
+
+    \begin{equation*}
+        \begin{split}
+            N_3:\hspace*{3cm} \norm{x + y}_1 & = \int_{-1}^{1}|x(t) + y(t)|dt \hspace*{2cm} \forall\ x,y\in C[-1,1]\\[2mm]
+            & \leq\ \int_{-1}^{1}|x(t)|dt + \int_{-1}^{1} |y(t)|dt\\[2mm]
+        \end{split}
+    \end{equation*}
+
+    \begin{center}
+        \[\boxed{\norm{x + y}_1 \leq \norm{x}_1 + \norm{y}_1} \hspace*{3cm} \forall\ x,y\in C[-1,1]\]
+    \end{center}
+
+
+    \[N_4:\hspace*{2cm} \mbox{Let}\ \alpha\in K\ \mbox{where $K$ is a field and $x\in C[a,b]$ be any element then}\]
+
+    \begin{equation*}
+        \begin{split}
+            \norm{\alpha \cdot  x}_1 & = \int_{-1}^{1}|\alpha x \cdot (t)|dt\\[2mm]
+            & = |\alpha| \cdot \int_{-1}^{1} |x(t)|dt\\[2mm]
+            \norm{\alpha \cdot  x}_1 & = |\alpha| \cdot \norm{x}_1
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.2cm}
+
+    Hence, all the four condition to be a normed linear space is satisfied, thus $\left(C[-1,1],\norm{\cdot}_1\right)$ is a {\bf normed linear space}.
+
+    \vspace*{0.5cm}
+
+    Now, Let's check the {\bf completeness}.
+
+    Consider a sequence $\left\{x_n\right\}$ whose terms are defined as,
+    \begin{equation*}
+        x_n(t) = \begin{cases}
+            1 \hspace*{2cm} -1\leq t \leq 0\\
+            1-nt \hspace*{1.5cm} 0 < t < \frac{1}{n}\\
+            0 \hspace*{2.4cm} \frac{1}{n} < t \leq 1
+        \end{cases}
+    \end{equation*}
+
+    Let's draw picture of above defined piecewise function for our convenience,
+
+    \vspace*{0.3cm}
+
+    \begin{center}
+        \def\svgwidth{12cm}
+        \input{drawing-6.eps_tex}
+    \end{center}
+
+    \pagebreak
+
+    \vspace*{0.3cm}
+
+    It may be observed that $\left\{x_n\right\}$ is a Cauchy sequence.Geometrically the function $x_n$ is shown in above figure.
+
+    And $\norm{x_n - x_m}$ represents the area of the triangle shown in the figure.
+
+    Clearly, each $x_n(t)$ is continuous on $[-1,1]$, also  $\left\{x_n\right\}$ is a Cauchy sequence in $C[-1,1]$.
+
+    \vspace*{0.4cm}
+
+    If $n > m$ then,
+
+    
+    \[\norm{x_n - x_m}  = \int_{-1}^{1}|x_n(t) - x_m(t)|dt\]
+
+    Let if possible, $x_n\to x$ in $[-1,1]$.
+
+    But, 
+    
+    \begin{equation*}
+        \begin{split}
+            \norm{x_n - x}  & = \int_{-1}^{1}|x_n(t) - x(t)|dt\\[2mm]
+            & = \int_{-1}^{0}|1-x(t)|dt + \int_{0}^{\frac{1}{n}}|x_n(t)-x(t)|dt + \int_{\frac{1}{n}}^{1}|x(t)|dt
+        \end{split}
+    \end{equation*}
+
+    Since integrands are non-negative,so our each integral on the RHS also.
+
+    Hence $\norm{x_n - x}\to 0$  would imply that each integral on RHS approaches to zero as $n\to \infty$. So we have,
+
+    \begin{equation*}
+        \begin{cases}
+           \displaystyle \lim_{n\to \infty} \int_{-1}^{0}|1-x(t)|dt = 0\\[1cm]
+           \displaystyle \lim_{n\to \infty} \int_{0}^{\frac{1}{n}}|x_n(t)-x(t)|dt = 0\\[1cm]
+           \displaystyle \lim_{n\to \infty}  \int_{\frac{1}{n}}^{1}|x(t)|dt = 0
+        \end{cases}
+    \end{equation*}
+
+    Now, extracting the valu of $x(t)$ from each integral we have,
+
+    \begin{equation*}
+        x(t) = \begin{cases}
+            1 \hspace*{2cm} -1\leq t \leq 0\\
+            0 \hspace*{2.4cm} 0 < t \leq 1
+        \end{cases}
+    \end{equation*}
+
+    But, here we see that the function is breaks at $t = 0$, so that function is not continuous in $[-1,1]$.So as such $x\not \in C[-1,1]$.
+
+    \vspace*{0.6cm}
+
+    So that, it voilates the criteria for completeness.Eventually, we say that $\left(C[-1,1],\norm{\cdot}_1\right)$ is {\bf incomplete normed linear space} i.e. {\bf not a Banach Space}. 
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.5(Theorem):}}
+
+    \subsubsection*{\underline{{\bf Statement:}}}
+
+    Prove that linear space $\mathbb{R}^n$, equipped with the norm given by 
+    \[\norm{x} = \left(\sum_{i=1}^{n}|\xi_i|^2\right)^{\frac{1}{2}}\] where, $x = \left(\xi_1\ \xi_2\ \cdots \cdots\xi_n\right)\in \mathbb{R}^n$ is a real Banach space.
+
+    \vspace*{0.5cm}
+
+    \subsubsection*{\underline{{\bf Proof:}}}
+
+    The linear space $\mathbb{R}^n$, equipped with the norm given by 
+    \[\norm{x} = \left(\sum_{i=1}^{n}|\xi_i|^2\right)^{\frac{1}{2}}\] where, $x = \left(\xi_1\ \xi_2\ \cdots \cdots\xi_n\right)\in \mathbb{R}^n$
+
+    Now, first of all we must prove that $\mathbb{R}^n$ togather with the norm $\norm{\cdot}$ is a normed linear space.
+
+    \begin{equation*}
+        \begin{split}
+            N_1:\hspace*{3cm} \mbox{Since}\ \forall\ |\xi_i|  &\geq 0\\[2mm]
+            \Rightarrow\ \sum_{i=1}^{n} |\xi_i| & \geq 0\\[2mm]
+            \Rightarrow\ \left(\sum_{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}} & \geq 0\\[2mm]
+            \Rightarrow\ \norm{x} & \geq 0 \hspace*{2cm} \forall\ x\in \mathbb{R}^n
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            N_2:\hspace*{3cm} \norm{x} & = 0\\[2mm]
+            \Leftrightarrow\ \left(\sum_{i=1}^{n} |\xi_i|^2 \right)^{\frac{1}{2}} & = 0\\[2mm]
+            \Leftrightarrow\ \sum_{i=1}^{n} |\xi_i|^2  & = 0\\[2mm]
+            \Leftrightarrow\ \xi_i & = 0 \hspace*{2cm} \forall\ i = 1,2,\cdots \cdots \cdots,n\\[2mm]
+            \Leftrightarrow\ \left(\xi_1\ \xi_2\ \cdots \cdots \cdots\ \xi_n\right) & = 0\\[2mm]
+            \Leftrightarrow\ x = 0\\[2mm]
+            \Rightarrow\ \norm{x} & = 0\ \Leftrightarrow\ x = 0 
+        \end{split}
+    \end{equation*}
+
+    \pagebreak
+
+    \vspace*{0.3cm}
+
+    \begin{center}
+        $N_3:\hspace*{3cm} \mbox{Let $x = \left(\xi_1\ \xi_2\ \cdots \cdots \cdots\ \xi_n\right)$ and $y = \left(\eta_1\ \eta_2\ \cdots \cdots \cdots\ \eta_n\right)$}$
+        
+        be any two members of $\mathbb{R}^n$ then we have,
+    \end{center}
+
+    \begin{equation*}
+        \begin{split}
+            \norm{x + y} & = \norm{\left(\xi_1\ \xi_2\ \cdots \cdots \cdots\ \xi_n\right) + \left(\eta_1\ \eta_2\ \cdots \cdots \cdots\ \eta_n\right)}\\[2mm]
+            & = \norm{\left(\xi_1 + \eta_1\right)\ \left(\xi_2 + \eta_2\right)\ \cdots \cdots \cdots \left(\xi_n + \eta_n\right)}\\[2mm]
+            & = \left(\sum_{i=1}^{n} |\xi_i + \eta_i|^2\right)^{\frac{1}{2}}\\[2mm]
+            & \mbox{Using Minkowski inequality (finite form)}\\[2mm]
+            & \leq\ \left(\sum_{i=1}^{n} |\xi_i|^2\right)^{\frac{1}{2}} + \left(\sum_{i=1}^{n} |\eta_i|^2\right)^{\frac{1}{2}}\\[2mm]
+            & \leq\ \norm{x} + \norm{y}\\[4mm]
+            \Rightarrow\ & \boxed{\norm{x + y}  \leq\ \norm{x} + \norm{y}} \hspace*{3cm} \forall\ x,y\in \mathbb{R}^n
+        \end{split}
+    \end{equation*}
+
+    \vspace*{1cm}
+
+    \begin{center}
+        $N_4:\hspace*{3cm}$ 
+        Let $\alpha$ be any scalar from field $K$ and $x$ is an
+        
+        arbitrary element of $\mathbb{R}^n$. Then we have,
+    \end{center}
+       
+
+    \begin{equation*}
+        \begin{split}
+            \norm{\alpha \cdot x} & = \left(\sum_{i=1}^{n} |\alpha \cdot \xi_i|^2\right)^\frac{1}{2}\\[2mm]
+            & = \left(\sum_{i=1}^{n} |\alpha|^2 \cdot |\xi_i|^2\right)^\frac{1}{2}\\[2mm]
+            & = \left(|\alpha|^2\right)^\frac{1}{2} \left(\sum_{i=1}^{n}  |\xi_i|^2\right)^\frac{1}{2}\\[2mm]
+            \Rightarrow\ & \boxed{\norm{\alpha \cdot x} = |\alpha| \cdot \norm{x}} \hspace*{3cm} \forall\ x\in \mathbb{R}^n
+        \end{split}
+    \end{equation*}
+
+    \vspace*{0.3cm}
+
+    Hence $\mathbb{R}^n$ are  normed linear space with above defined norm.
+
+    \pagebreak
+
+    \vspace*{0.5cm}
+
+
+    Now, in order to show that $\mathbb{R}^n$ are Banach Spaces, we have to prove their completeness with respect to the norm defined above.
+
+    Let $\left\{x_m\right\}$ be a Cauchy sequence in $\mathbb{R}^n$, where,  $x_m = \left(\xi_1^{(m)}\ \xi_2^{(m)}\ \cdots \cdots \cdots\ \xi_n^{(m)}\right)\in \mathbb{R}^n$
+
+
+    Then for each $\epsilon > 0,\ \exists$ a positive integer $N$ such that
+    \begin{equation*}
+        \begin{split}
+            \norm{x_m -x_p} & = \left(\sum_{i=1}^{n}|\xi_i^{(m)} - \xi_i^{(p)}|^2\right)^\frac{1}{2} < \epsilon \hspace*{2cm} \forall\ m,p\geq N\\[2mm]
+            & = \sum_{i=1}^{n} |\xi_i^{(m)} - \xi_i^{(p)}|^2 < \epsilon^2 \hspace*{2cm} \forall\ m,p\geq N \\[2mm]
+            & = |\xi_i^{(m)} - \xi_i^{(p)}| < \epsilon \hspace*{2cm} \forall\ m,p \geq N ;\ i = 1,2,\cdots \cdots \cdots, n
+        \end{split}
+    \end{equation*}
+
+    This shows that for fixed $(1\leq i \leq n)$ the sequence $\left\{\xi_i^{(m)}\right\}_{m=1}^{\infty}$ is a Cauchy-sequence in $\mathbb{R}$.
+
+    Since $\mathbb{R}$ is complete, it is converges in $\mathbb{R}$.
+
+    Let $\xi_i^{(m)}\to \xi_i$ as $m\to \infty$
+
+    Using these, we define $n$ limits as
+
+    \[x = \left(\xi_1,\xi_2, \cdots \cdots \cdots , \xi_n\right)\in \mathbb{R}^n\]
+
+    Now,
+
+    \[\norm{x_m -x_p}  = \left(\sum_{i=1}^{n}|\xi_i^{(m)} - \xi_i^{(p)}|^2\right)^\frac{1}{2} < \epsilon \hspace*{2cm} \forall\ m,p\geq N\]
+
+    Taking $p\to \infty$ we have,
+
+    \[\norm{x_m -x} < \epsilon \hspace*{2cm} \forall\ m\geq N\]
+    \[\Rightarrow\ x_m\to x\ \mbox{in}\ \mathbb{R}^n\]
+
+    Hence, $\mathbb{R}^n$ is complete and therefore it is a {\bf Banach Space}.
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.6(Theorem):}}
+
+    \subsubsection*{\underline{{\bf Statement:}}}
+
+    Let $X$ be a normed space over the field $K$ and let $M$ be a closed subspace of $X$.
+        
+    Define $\norm{\cdot}_q : X/M \to \mathbb{R}$ by 
+    \[\norm{x+M}_q = \mbox{inf}\cdot \biggl\{\norm{x + m} : m\in M\biggr\}\]
+    then $\left(X/M\  ,\ \norm{\cdot}_q \right)$ is a normed space. Further, if $X$ is a Banach space, then $X/M$ is a Banach space.   
+
+    \subsubsection*{\underline{{\bf Proof:}}}
+
+    We verify all the postulates for a norm.
+
+    $N_1: \hspace*{3cm}$ Since $\norm{x + m}$ is a non-negative real number and every set of non-negative real number is bounded below.
+
+    It follows that the $\mbox{inf}\cdot \biggl\{\norm{x + m} : m\in M\biggr\}$ exists and is non-negative that is,
+
+    \[\norm{x + m}_q \geq 0 \hspace*{2cm} ; \forall\ x\in M\in X/M\]
+
+    $N_2:$ Let $x+m = m$ (zero element of $X/M$) $\forall\ x\in M$. Hence,
+
+    \begin{equation*}
+        \begin{split}
+            \norm{x+M}_q & = \mbox{inf}\cdot \biggl\{\norm{x + m} : m\in M\biggr\}\\[2mm]
+            & = \mbox{inf}\cdot \biggl\{\norm{y} : y\in M\biggr\} = 0\\[2mm]
+        \end{split}
+    \end{equation*}
+
+    $\biggl[\because\  M\ \mbox{being a subspace contains  zero vector whose norm is real number 0.}\biggr]$
+
+    \vspace*{0.2cm}
+
+    thus, 
+    \[\norm{x + M}_q = \norm{0 + M}_q = \norm{0} = 0\]
+    \[\Rightarrow\ x + m = m\ \Rightarrow\ \norm{x +M}_q = 0\]
+
+    {\bf Conversely,} we have
+
+    \[\norm{x+M}_q = 0\ \Rightarrow\ \mbox{inf}\cdot \biggl\{\norm{x + m} : m\in M\biggr\} = 0  \hspace*{2cm} \mbox{for some $x\in X$}\]
+
+    then $\exists$  a sequencene $\left\{m_k\right\}_{k=1}^{\infty}\subset M$ such that, 
+
+    \[\norm{x + m_k} = 0\ \mbox{as}\ k\to \infty\]
+
+    \[\mbox{or,} \hspace*{1cm}\lim_{k\to \infty} \norm{x + m_k} = 0\]
+
+    \[\Rightarrow\ \lim_{k\to \infty} m_k = -x\]
+
+    \[\Rightarrow\ -x\in M\] 
+    
+    \[\hspace*{2cm}\biggl\{\mbox{Since, $M$ is closed and $\left\{m_k\right\}_{k=1}^{\infty}$ is a sequence in $M$ converging to $-x$}\biggr\}\]
+
+    \[\Rightarrow\ x + m\hspace*{2cm}\biggl\{\because\ M\  \mbox{is a subspace}\biggr\}\]
+
+    \[\Rightarrow\ x + m = m\hspace*{2cm}\biggl\{\because\  \mbox{The zero element of}\ X/M\biggr\}\]
+
+    Thus we have shown that 
+
+    \[\boxed{\norm{x + m}_q = 0\ \Leftrightarrow\ x+m =m}\hspace*{1cm} (\mbox{the zero of}\  X/M)\]
+
+    \vspace*{0.5cm}
+
+    \[N_3:\hspace*{3cm} \mbox{Let}\  x + m, y+m\in X/M\ \mbox{then,}\]
+
+    \begin{equation*}
+        \begin{split}
+            \norm{(x+m) + (y + m)}_q &  = \norm{(x+y) + m}_q\\[2mm]
+            &[\mbox{By definition of addition of coset}]\\[2mm]
+            & = \mbox{inf}\cdot \biggl\{\norm{(x + y) + m} : m\in M\biggr\}\\[2mm]
+            &  \leq\ \mbox{inf}\cdot \biggl\{\norm{x + m_1} + \norm{y + m_2} : m_1, m_2\in M\biggr\}\\[2mm]
+            & \leq\  \mbox{inf}\cdot \biggl\{\norm{x + m_1} : m_1\in M\biggr\} + \mbox{inf}\cdot \biggl\{\norm{y + m_2} : m_2\in M\biggr\}
+        \end{split}
+    \end{equation*}
+
+    \[\boxed{\norm{(x+m) + (y + m)}_q \leq\  \norm{x + m}_q + \norm{y + m}_q} \hspace*{1.5cm} \forall\ x,y\in X/M\]
+
+    This proves the triangle inequaliity.
+
+    \vspace*{0.5cm}
+
+    \[N_4: \hspace*{3cm} \mbox{For $x\in X$ and $\alpha\in K$ with $\alpha\neq 0$ , we have}\]
+    
+    \begin{equation*}
+        \begin{split}
+            \norm{\alpha \cdot (x + m)}_q & = \norm{\alpha \cdot x + m}_q\\[2mm]
+            & = \mbox{inf}\cdot \biggl\{\norm{\alpha \cdot x + m} : m\in M\biggr\}\\[2mm]
+            & = \mbox{inf}\cdot \biggl\{\norm{\alpha \cdot x + \alpha \cdot m'} : m'=\frac{m}{\alpha}\in M\biggr\}\\[2mm]
+        \end{split}
+    \end{equation*}
+
+
+    \begin{equation*}
+        \begin{split}
+            & = |\alpha| \cdot \mbox{inf}\cdot \biggl\{\norm{x + m'} : m'\in M\biggr\}\\[2mm]
+            &  = |\alpha| \cdot \norm{x + m}_q\\[2mm]
+            & \boxed{\norm{\alpha \cdot (x + m)}_q = |\alpha| \cdot \norm{x + m}_q}\\[2mm] 
+            \hspace*{4cm} \forall\ x\in X/M\ & \mbox{and}\ \alpha\in K 
+        \end{split}
+    \end{equation*}
+
+    Thus we conclude that $\left(X/M, \norm{\cdot}_q\right)$ is a normed space over field $K$.
+
+    \vspace*{0.3cm}
+
+    First assume that $X$ is a Banach space.Then we have to show that $X/M$ is a Banach space.
+
+    Let $\left\{x_n + m\right\}$ be a Cauchy sequence in $X/M$.
+    We shall first construct a convergent subsequence of $\left\{x_n + m\right\}$ in $X/M$.
+
+    Evidently, it is possible to find a subsequence $\left\{x_{n_1} + m\right\}$ of the sequence $\left\{x_n + m\right\}$ such that
+
+    \begin{equation*}
+        \begin{split}
+            \norm{(x_{n_2} + m) - (x_{n_1} + m)}_q & < \frac{1}{2}\\[2mm]
+            \norm{(x_{n_3} + m) - (x_{n_2} + m)}_q & < \frac{1}{2^2}\\[2mm]
+            \cdots \cdots \cdots  \cdots \cdots \cdots \cdots \cdots \cdots & \cdots \cdots \\[2mm]
+            \cdots \cdots \cdots  \cdots \cdots \cdots \cdots \cdots \cdots & \cdots \cdots \\[2mm]
+            \norm{(x_{n_k+1} + m) - (x_{n_k} + m)}_q & < \frac{1}{2^k}\\[2mm]
+        \end{split}
+    \end{equation*}
+
+    Choose any vector $y_1\in x_{n_1} + m$  and $y_2\in x_{n_2} + m$ such that
+    
+    \[\norm{y_2 - y_1} < \frac{1}{2}\]
+
+    We then find $y_3\in x_{n_3} + m$ such that
+
+    \[\norm{y_3 - y_2} < \frac{1}{2^2}\]
+
+    \vspace*{0.5cm}
+
+    Proceeding in this way, we get the sequence $\left\{y_k\right\}$ in $X$ such that 
+
+    \[x_{n_k} + m = y_k  + m\]
+
+    \[\mbox{and}\hspace*{1.5cm} \norm{y_{k+1} - y_k} < \frac{1}{\alpha^k} \hspace*{2cm} (k = 1,2,\cdots \cdots \cdots)\]
+
+    Let $k > r$ then,
+
+    \begin{equation*}
+        \begin{split}
+            \norm{y_k - y_r} &  = \norm{(y_k - y_{k-1}) + (y_{k-1} - y_{k-2}) + \cdots \cdots \cdots + (y_{r +1} - y_r)}\\[2mm]
+            & \leq\ \norm{y_k - y_{k-1}} + \norm{y_{k-1} - y_{k-2}} + \cdots \cdots \cdots + \norm{y_{r + 1} - y_{r}}\\[2mm]
+            & < \frac{1}{2^{k-1}} + \frac{1}{2^{k-2}} + \cdots \cdots \cdots + \frac{1}{2^r} < \frac{1}{2{r-1}}\\[2mm]
+            \Rightarrow\ \norm{y_k - y_r} & < \frac{1}{2^{r-1}}
+        \end{split}
+    \end{equation*}
+
+    Therefore, it follows that $\left\{y_k\right\}$ is a Cauchy sequence in $X$ but $X$ is being complete $\exists\ y\in X$ such that
+    
+    \[\lim_{k\to \infty} \norm{y_k - y} = 0\]
+
+    Since, 
+
+    \begin{equation*}
+        \begin{split}
+            \norm{(x_{n_k} - m) - (y + m)}_q & = \norm{(y_k + m) - (y + m)}_q\\[2mm]
+            & = \norm{(y_k - y) + m}_q\\[2mm]
+            & \leq\ \norm{y_k -y}
+        \end{split}
+    \end{equation*}
+
+    \begin{center}
+        It follows that,
+    \end{center}
+    
+    \[\lim_{k\to \infty} ( x_{m_k} + m) = (y + m)\in X/M\]
+
+    \vspace*{0.4cm}
+
+    Thus we have proved that the Cauchy sequence $\left\{x_n + m\right\}$ has a convergent subsequence in $X/M$.
+    
+    Since we know that if the subsequence of a Cauchy sequence converges, the sequence itself converges.
+
+    Hence, the Cauchy sequence $\left\{x_n + m\right\}$ converges in $X/M$ and thus $X/M$ is complete.
+
+    Thus $X/M$ is a {\bf Banach Space}.
+
+    \pagebreak
+
+    \begin{center}
+        \section*{\underline{\LARGE{{\bf Solutions of Assignment \Romannum{2}}}}}
+    \end{center}
+
+    \subsection*{\underline{Solution of Question No.1(Problem):}}
+
+    \begin{tcolorbox}[title=Problem]
+        Give the example of linear functional on different normed linear spaces for bounded linear functional.
+    \end{tcolorbox}
+
+    \begin{tcolorbox}
+        Since, we know that if $X$ be a normed space over the field $K$, a mapping $f : X\to K$ is said to be a linear functional on $X$ if,
+
+        \[\boxed{f(\alpha x + \beta y) = \alpha f(x) + \beta f(y)} \hspace*{2cm} \forall\ x,y\in X\ \mbox{and}\ \alpha, \beta\in K\]
+
+        A linear functional is said to be real or complex according as the field $K$ is ${\bf \mathbb{R}}$ or ${\bf \mathbb{C}}$ respectively.
+    \end{tcolorbox}
+
+    \subsubsection*{\underline{{\bf Example:}}}
+
+    Let the Banach space $\left(l^1, \norm{\cdot}_1\right)$, define the linear functional $f : l^1\to \mathbb{R}$ by
+
+    \[f(x) = \sum_{i=1}^{\infty}\ \xi_i\hspace*{3cm} x = \left\{\xi_i\right\}\]
+
+    then $f$ is bounded linear functional on $l^1$ with $\norm{f} = 1$.
+
+    \subsubsection*{\underline{{\bf Solution:}}}
+
+    Let $f$ be a function from $l^1$ into $\mathbb{R}$ defined by,
+    
+    \begin{equation*}
+        f(x) = \sum_{i=1}^{\infty}\ \xi_i \tag*{(\Romannum{1})}\hspace*{2cm} \mbox{where}\ x=\left\{\xi_1\right\}\in l^1
+    \end{equation*}
+
+    Let $\alpha, \beta \in \mathbb{R}$ and $x,y\in l^1$ and,
+
+    \begin{center}
+        let \hspace*{0.5cm} $x = \alpha_1 x_1, \cdots \cdots \cdots, \alpha_n x_n$\\
+        and $y = \beta_1 x_1, \cdots \cdots \cdots, \beta_n x_n$
+    \end{center}
+
+    then,
+
+    \begin{equation*}
+        \begin{split}
+            f(\alpha x + \beta y) & = f\left[\alpha \left(\alpha_1 x_1 + \cdots \cdots \cdots + \alpha_n x_n\right) + \beta\left(\beta_1 x_1 + \cdots \cdots \cdots + \beta_n x_n\right)\right]\\[2mm]
+            & = f\left[\left(\alpha \alpha_1 + \beta \beta_1\right)x_1 + \cdots \cdots \cdots + \left(\alpha \alpha_n + \beta \beta_n\right)x_n\right]\\[2mm]
+            & = \left(\alpha \alpha_1 + \beta \beta_1\right)\xi_1 +  \cdots \cdots \cdots + \left(\alpha \alpha_n + \beta \beta_n\right)\xi_n\\[2mm]
+            & = \alpha\left(\alpha_1 \xi_1 + \cdots \cdots \cdots + \alpha_n \xi_n\right) + \beta\left(\beta_1 \xi_1 + \cdots \cdots \cdots + \beta_n \xi_n\right)\\[2mm]
+            & = \alpha f(x)  + \beta f(y)\\[2mm]
+            f(\alpha x + \beta y) & = \alpha f(x)  + \beta f(y) \hspace*{1.5cm} \forall\ x,y\in l^1\ \& \ \alpha, \beta \in \mathbb{R}
+        \end{split}
+    \end{equation*}
+
+    Therefore, $f$ is a linear functional on $l^1$ over the field $\mathbb{R}$.
+
+    \vspace*{0.3cm}
+    
+    Now, we have to show that $f$ is bounded.
+
+    Since, the linear functional $f : l^1 \to \mathbb{R}$ defined by,
+
+    \[f(x) = \sum_{i=1}^{\infty}\ \xi_i\hspace*{3cm} x = \left\{\xi_i\right\} \in l^1\]
+
+    we have,
+
+    \[f(x) = \sum_{i=1}^{\infty} |\xi_i| =  \sum_{i=1}^{\infty} |\xi_i \cdot 1|\]
+
+    By virtue of Cauchy-Schwartz inequality, we have
+
+    \[f(x) \leq\ |1|\sum_{i=1}^{\infty}|\xi_i|\  \leq\  \sum_{i=1}^{\infty}|\xi_i| = |x|_1 \hspace*{0.5cm} \forall\ x\in l^1 \]
+
+    Since, we know that $\norm{x} = |x|$
+
+    then, we have
+
+    \[\boxed{f(x) \leq\ \norm{x}_1},\hspace*{0.5cm} \forall\ x\in l^1\]
+
+    $\Rightarrow$ $f$ is bounded on $l^1$.
+
+    \vspace*{0.5cm}
+    Furthermore, we have 
+    \[\norm{f} = \mbox{sup.}\biggl\{|f(x)| : x\in X, \norm{x} \leq\ 1 \biggr\}\cdot \norm{1}\]
+
+    \[\Rightarrow\ \norm{f} \leq\ \norm{1}\]
+
+    \begin{equation*}
+        \Rightarrow\ \norm{f} \leq\ 1 \tag*{(A)}
+    \end{equation*}
+
+    Since, $f$ is bounded then we have,
+
+    \begin{equation*}
+        \norm{f} \geq \frac{|f(x)|}{\norm{x}_1} \tag*{(\Romannum{2})}
+    \end{equation*}
+
+    \begin{tcolorbox}
+        Because, if $f$ is bounded then $f(x) \leq\ \norm{f}\norm{x}\hspace*{0.5cm} \forall\ x\in X$ equivalently, if $x \neq 0$ then 
+        \[\norm{f} \geq \frac{|f(x)|}{\norm{x}}\]
+    \end{tcolorbox}
+
+    For, $x = e_1\in l^1$,
+
+    Now, using equation $(\Romannum{1})$ , we have
+    
+    \[f(x) = x\ \Rightarrow\ |f(x)| = |x|\]
+    \[\Rightarrow\ |f(x)| = \norm{x}_1\]
+    \[\Rightarrow\ |f(e_1)| = \norm{e_1}_1\]
+    \[\Rightarrow\ \boxed{|f(e_1)| = \norm{e_1}_1}\]
+
+    Using this in equation $(\Romannum{2})$ , we get as
+
+    \[\norm{f} \geq\ \frac{|f(e_1)|}{\norm{e_1}_1} = \frac{\norm{e_1}_1}{\norm{e_1}_1} = 1\]
+    
+    \begin{equation*}
+        \Rightarrow\ \norm{f}\ \geq\ 1 \tag*{(B)}
+    \end{equation*}
+
+    from equation($A$) and equation($B$) we get as,
+
+    \[\boxed{\norm{f} = 1}\]
+
+    Hence, {\bf $f$ is a bounded linear functional with $\norm{f} = 1$}.
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No.2(Problem):}}
+
+    \begin{tcolorbox}[title=Problem]
+        Define the functional $f : \mathbb{R}^{n}\to \mathbb{R}$ by 
+        \[f(x) = x - a\]
+        where, $x = \left(\xi_1\ \xi_2\ \cdots \cdots\xi_n\right)\in \mathbb{R}^n$ and $x\cdot a$ denotes the familiar scalar product of $x$ and $a$. Then $f$ is bounded linear functional on $\mathbb{R}^n$ with
+        \[\norm{f} = \norm{a}\]
+    \end{tcolorbox}
+
+    \subsubsection*{\underline{{\bf Solution:}}}
+
+    Let $f$ be a function from $\mathbb{R}^n$ into $\mathbb{R}$ defined by,
+
+    \[f(x) = x-a\]
+
+    \[\mbox{or,}\hspace*{0.5cm} f(x) = \left(\xi_1\ \xi_2\ \cdots \cdots \cdots \ \xi_n\right)\cdot \left(a_1\ a_2\ \cdots \cdots  \cdots\ a_n\right)\]
+
+    \[\mbox{or,}\hspace*{0.5cm} f(x) = \left(a_1\ \xi_1\ a_2\ \xi_2\ \cdots \cdots \cdots \ a_n\ \xi_n\right)\]
+
+    \[\mbox{where,}\ a = \left(a_1\ a_2 \ \cdots \cdots \cdots a_n\right)\in \mathbb{R}^n\]
+
+    \[\mbox{and,}\ x = \left(\eta_1\ \eta_2 \ \cdots \cdots \cdots \eta_n\right)\in \mathbb{R}^n\]
+
+    If $\alpha, \beta \in \mathbb{R}$ , we have
+
+    \begin{equation*}
+        \begin{split}
+            f(\alpha x + \beta y) & = f\left[\alpha\left(\xi_1\ \xi_2 \ \cdots \cdots \cdots \xi_n\right) + \beta\left(\eta_1\ \eta_2 \ \cdots \cdots \cdots \eta_n\right) \right]\\[2mm]
+            & = f\left[\alpha \xi_1 + \beta \eta_1,\cdots \cdots \cdots,  + \alpha \xi_n + \beta \eta_n\right]\\[2mm]
+            & = \alpha_1\left(\alpha \xi_1 + \beta \eta_1\right) + \cdots \cdots \cdots  + \alpha_n\left(\alpha \xi_n + \beta \eta_n\right)\\[2mm]
+            & = \alpha \left(\alpha_1 \ \xi_1 + \cdots \cdots \cdots\ \alpha_n\ \xi_n\right) + \beta\left(\alpha_1 \ \eta_1 + \cdots \cdots \cdots\ \alpha_n\ \eta_n\right)\\[2mm]
+            & = \alpha f \left(\xi_1 \cdots \cdots \cdots \xi_n\right) + \beta f \left(\eta_1 \cdots \cdots \cdots \eta_n\right)\\[2mm]
+            f(\alpha x + \beta y) & = \alpha f(x) + \beta f(y) \hspace*{1cm} \forall\ x,y\in \mathbb{R}^n\  \&\  \alpha, \beta\in \mathbb{R}
+        \end{split}
+    \end{equation*}
+
+    therefore, $f$ is a linear function on $\mathbb{R}^n$ over the field $\mathbb{R}$.
+
+    Now, we have to show that $f$ is bounded.
+
+    Since, the linear function $f : \mathbb{R}^n\to \mathbb{R}$ defined by
+    \begin{equation*}
+        f(x) = x - a \tag*{(1)}
+    \end{equation*}
+
+    \[\mbox{where,}\ x =\left(\xi_1\ \xi_2 \cdots \cdots \cdots \xi_n\right)\ \mbox{and}\ a =\left(a_1\ a_2 \cdots \cdots \cdots a_n\right),\ \mbox{both}\ x\  \&\  a\in \mathbb{R}^n\]
+    
+    we have,
+
+    \[|f(x)| = |x-a|\]
+
+    Since, we know that $\norm{x} = |x|$
+    
+    \[\Rightarrow\ |f(x)| = \norm{x-a}\]
+
+    By virtue of Cauchy-Schwartz inequality we have,
+
+    \[|f(x)| = |x-a| \leq \norm{x}\cdot \norm{a}\]
+
+    let, $\norm{a} = K$ then,
+
+    \[\boxed{|f(x)| \leq K\cdot \norm{x}} \hspace*{2cm} \forall\ x\in \mathbb{R}^n\]
+
+    Hence $f$ is {\bf bounded}.
+
+    \vspace*{0.3cm}
+    Furthermore, we have $\norm{f} = \mbox{sup.}\biggl\{|f(x)| : x\in X,\ \norm{x} \leq 1\biggr\} \leq \norm{a}$
+
+    \begin{equation*}
+        \Rightarrow\ \norm{f} \leq \norm{a} \tag*{(A)}
+    \end{equation*}
+
+    Since, $f$ is bounded, then we have,
+
+    \begin{equation*}
+        \norm{f} \geq \frac{|f(a)|}{\norm{a}} \tag*{(2)}
+    \end{equation*}
+
+    \begin{tcolorbox}
+        Because, if $f$ is bounded then $f(x) \leq\ \norm{f}\norm{x}\hspace*{0.5cm} \forall\ x\in X$ equivalently, if $x \neq 0$ then, 
+        \[\norm{f} \geq \frac{|f(x)|}{\norm{x}}\]
+    \end{tcolorbox}
+
+    Now, using equation(1) we have,
+
+    \begin{center}
+        \[f(x) =x\cdot a\]
+
+        put $x = a$
+
+        \[f(a) = a\cdot a\]
+        \[|f(a)| = |a|\cdot |a|\]
+        \[|f(a)| = \norm{a}\cdot \norm{a} = \norm{a}^2\]
+        \[\Rightarrow\ \boxed{|f(a)| = \norm{a}^2}\]
+    \end{center}
+
+    Using this in equation(2) we have,
+
+    \[\norm{f} \geq \frac{\norm{a}^2}{\norm{a}} = \norm{a}\]
+    \begin{equation}
+        \Rightarrow\ \norm{f} \geq \norm{a} \tag*{(B)}
+    \end{equation}
+
+    From equation($A$) and equation($B$), we have
+
+    \[\boxed{\norm{f} = \norm{a}}\]
+
+    \vspace*{0.0cm}
+
+
+    \subsection*{\underline{Solution of Question No.3:}}
+
+    \subsubsection*{\underline{Example of unbounded linear functional:}}
+
+    Let $X = \left(C[a,b], \norm{\cdot}_1\right)$ be the normed space and let $\delta_{t_0} : C[a,b]\to \mathbb{R}$ be the linear functional then, $\delta_{t_0}$ is unbounded in $X$.
+
+    \subsubsection*{\underline{Solution:}}
+
+    Let $\delta_{t_0} : C[a,b]\to \mathbb{R}$ be a function defined by, 
+    \[\delta_{t_0}(x) = x(t_0), \hspace*{0.5cm} x\in C[a,b]\]
+
+    then we have to show that $\delta_{t_0}$ is linear functional.
+
+    Let $\alpha, \beta\in \mathbb{R}\ \&\ x,y\in X$ then we have,
+
+    \begin{equation*}
+        \begin{split}
+            \delta_{t_0}\left(\alpha x + \beta y\right) & = \alpha x(t_0) + \beta y(t_0), \hspace*{0.5cm} t\in [a,b]\\[2.5mm]
+            & = \alpha \delta_{t_0}(x) + \beta \delta_{t_0}(x), \hspace*{0.5cm} t\in [a,b]\\[2mm]
+            \delta_{t_0}\left(\alpha x + \beta y\right) & = \alpha \delta_{t_0}(x) + \beta \delta_{t_0}(x), \hspace*{0.5cm} t\in [a,b]
+        \end{split}
+    \end{equation*}
+
+    Now, we have to show that $\delta_{t_0}$ is unbounded.
+    \vspace*{0.3cm}
+
+    Let $x_n(t) = t^n, \hspace*{1cm} \forall\ n\in \mathbb{N}$ then,
+
+    \[\norm{x_n}_\infty =\displaystyle {\mbox{sup.}}\biggl\{|t^n|\biggr\} = 1\hspace*{1cm} \forall\ t\in [a,b]\]
+
+    \[\mbox{and,}\ \delta_{t_0}(x_n) = x_n(t_0) = n\]
+    \[\Rightarrow\ \delta_{t_0}(x_n) = n\]
+
+    therefore, $\norm{\delta_{t_0}(x_n)} = n = n\cdot 1 = n\cdot \norm{x_n}_\infty \hspace*{0.5cm} \forall\ n\in \mathbb{N}$ 
+    \vspace*{0.3cm}
+
+    thus, there is no fixed real number $K > 0$ such that
+    
+    \[\Rightarrow\ \norm{\delta_{t_0}(x_n)}_\infty \leq K\cdot \norm{x_n}_\infty\]
+
+    Hence, $\delta_{t_0}$ is {\bf unbounded} in $X$.
+
+    \begin{itemize}
+        \item For more info about the document, please visit: \url{https://github.com/akhlak919}
+    \end{itemize}
+
+\end{document}   

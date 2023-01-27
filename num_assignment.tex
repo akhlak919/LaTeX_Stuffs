@@ -1,0 +1,1106 @@
+\documentclass[a4paper,12pt]{article}
+% Set Margins according as you want.
+% \usepackage[a4paper, left=1in, right=1in, bottom=1in, top=1in]{geometry}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\pagecolor{white}
+\usepackage{graphicx}
+\graphicspath{C:\Users\user\Desktop\Learning LaTeX}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyvrb, fancyheadings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\color{black}
+\lhead{\includegraphics[scale=0.13]{DDU_Logo.png}}
+\rhead{Assignment: Number Theory}
+%\cfoot{Page \thepage}
+\lfoot{\thepage}
+\rfoot{By: Akhlak Ansari}
+\renewcommand{\footrulewidth}{1pt}
+\usepackage{tikz, tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{halloweenmath}
+\usepackage{enumerate}
+
+
+\title{\underline {\sc {\textbf ASSIGNMENT: NUMBER THEORY}}}
+
+\author{\textbf{Akhlak Ansari}}
+
+\begin{document}
+    \pgfplotsset{compat=1.17}
+    \color{black}
+
+    \maketitle 
+
+         
+    
+    \begin{center}
+      
+        \includegraphics[]{DDU_Logo.png}\\[3mm]
+        \textbf{ {\LARGE Department of Mathematics and Statistics}}
+    \end{center}
+
+    \vspace*{0.7cm}
+    \begin{center}
+        \includegraphics[]{Ransomware.png}
+    \end{center}
+
+    \begin{center}
+        \textbf{$\mbox{Fall}\ '\ 2022-23$ }
+    \end{center}
+
+    
+
+    \section*{Assignment Questions:}
+    \begin{enumerate}
+        {\large \item   Determine all positive solutions of the following Diophantine equations 
+        \begin{enumerate}
+            \item $123x + 360y = 99$
+            \item $158x -57y = 7$
+        \end{enumerate}}
+
+        {\large \item  If $a$ and $b$ are integers, not both of which are zero, prove that 
+        $$\mbox{gcd}(a,b) = \mbox{gcd}(-a,b) = \mbox{gcd}(a,-b) = \mbox{gcd}(-a,-b).$$}
+
+        {\large \item Explain Hill Cipher Method in Cryptography. Also encrypt and decrypt the message “We live in an insecure world” by Hill Cipher Method with key\ $ K = \begin{bmatrix}
+                27 & 1 \\
+                3 & 2
+              \end{bmatrix}$}.
+
+        {\large \item Define complete and reduced residue system with examples. Also verify that the set 
+        $$S = \left\{-19, -1, 22, 43, 46, 79, 113, 452\right\}  \mbox{is a reduced residue system}.$$}
+        {\large \item If $n \geq 1$ and $a$ is a integer such that $\mbox{gcd}(a, n) = 1$ then prove that
+        $$a^{\phi(n)} \equiv 1(\mbox{mod}\  n)$$
+        where $\phi(n)$ denotes the Euler's function.}
+    \end{enumerate}
+
+    \pagebreak
+
+    \begin{center}
+        \section*{\underline{\huge{Solutions}}}
+    \end{center}
+    
+    \subsection*{\underline{Solution of Question No 1(a).}}
+
+    Given linear diophantine equation is,
+    \begin{equation*}
+        123x + 360y = 99 \tag{1}
+    \end{equation*}
+
+    Let's find out the, $\mbox{gcd}(\mbox{Coefficient of}\  x ,\mbox{Coefficient of}\ y).$ i.e.
+
+    \begin{equation*}
+        \begin{split}
+            & \mbox{gcd}(123,360) \\[2mm]
+            360 & = 123\times 2 + 114 \\[2mm]
+            123 & = 114\times 1 + 9 \\[2mm]
+            114 & = 9\times 12 + 6 \\[2mm]
+            9 & = 6\times 1 + 3 \\[2mm]
+            6 & = 3\times 2 + 0 \\[2mm]
+            \mbox{Hence, gcd}(123,360) & = 3
+        \end{split}    
+    \end{equation*}
+
+        
+    Since, $\mbox{gcd}(123,360)=3|99$, so our diophantine equation is solvable for integers.
+    \vspace*{0.2cm}
+
+    Now, just write down the equation for the {\bf remainders},
+
+    \begin{equation*}
+        \begin{split}
+            114 & = 360(1) + 123(-2) \\[2mm]
+            9 & = 123(1) + 114(-1) \\[2mm]
+            6 & = 114(1) + 9(-12) \\[2mm]
+            3 & = 9(1) + 6(-1) \\[2mm]
+        \end{split}    
+    \end{equation*}
+
+    Now let us consider the last remainder,
+
+    $$3 = 9(1) + 6(-1)$$
+
+    Now using the backward substitutions for the remainders, the above equation transformed as,
+
+    \begin{equation*}
+        \begin{split}
+            3 & = 9(1) + [114(1) + 9(-12)](-1) \\[2mm] 
+            & = 9(1) + 114(-1) + 9(12) \\[2mm]
+            & = 9(13) + 114(-1) \\[2mm]
+            & = [123(1) + 114(-1)](13) + 114(-1) 
+        \end{split}    
+    \end{equation*}   
+    
+    \begin{equation*}
+        \begin{split}
+            3 & = 123(13) + 114(-13) + 114(-1) \\[2mm]
+            & = 123(13) + 114(-14) \\[2mm]
+            & = 123(13) + [360(1) + 123(-2)](-14) \\[2mm]
+            & = 123(13) + 360(-14) + 123(28) \\[2mm]
+            3 & = 123(41) + 360(-14)
+        \end{split}
+    \end{equation*}
+
+    Now, Multiply with $33$ to the above equation, we have
+    \begin{equation*}
+        99 = 123(1353) + 360(-462) \tag{2}
+    \end{equation*}
+    
+
+    This is the linear combination of $123$ and $360$ of the given problem.
+    \vspace*{2mm}
+
+    Now, comparing equation(2) with equation(1) we get as, 
+
+    
+    \begin{align*}
+        \boxed{$$x = 1353\  \mbox{and}\  y = -462$$.}
+    \end{align*}
+
+    This is called the particular solution of the given diophantine equation.
+
+    \begin{itemize}
+        \item \underline{General Solution}:
+    \end{itemize}
+
+    For general solution, we have the expression,
+
+   
+    $$x_{gen.} = x + \left\{\frac{b}{\mbox{gcd}(a,b)}\right\}\cdot t$$
+    
+
+    
+    $$y_{gen.} = y - \left\{\frac{a}{\mbox{gcd}(a,b)}\right\}\cdot t$$
+
+    where $\forall\ t\in \mathbb{Z}.$
+
+    \vspace*{2mm}
+    
+
+    Thus our general solution is given by,
+
+    \begin{align*}
+        \boxed{$$x_{gen.} = 1353 + \left\{\frac{360}{3}\right\}t = 1353 + 120t$$} 
+    \end{align*}
+    
+    \begin{align*}
+        \boxed{$$y_{gen.} = -462 - \left\{\frac{123}{3}\right\}t = -462 - 41t$$}
+    \end{align*}
+
+    where $\forall\ t\in \mathbb{Z}$.
+
+    \begin{itemize}
+        \item For positive solutions,
+    \end{itemize}
+    \begin{center}
+        we must have these conditions,
+    \end{center}
+    \vspace*{0.2cm}
+    \begin{center}
+        $x_{gen.} > 0\ \mbox{and}\ y_{gen} > 0.$
+    \end{center}
+
+    
+    \vspace*{0.2mm}
+
+    Thus,
+
+    
+    $$1353 + 120t  > 0 $$
+    $$t  > -\frac{1353}{120} $$
+    $$t  > -11.275$$
+       
+    and,
+
+    $$-462 -41t  > 0$$
+    $$t  < \frac{-462}{41}$$
+    $$t  < -11.268$$
+
+    \vspace*{3mm}
+
+    It concludes that $-11.275<t<-11.268$.But $t$ is an integer and there is no such integer in this interval.
+
+    \vspace*{4mm}
+
+    \texttt{{\bf Hence, the positive solution of given linear diophantine equation doesn't exists. }}
+
+
+    % Solution No 2 starts here
+    %.............................
+    %.............................
+
+    \subsection*{\underline{Solution of Question No 1(b).}}
+
+    Given linear diophantine equation is,
+    \begin{equation*}
+        158x - 57y = 7 \tag{1}
+    \end{equation*}
+
+    Let's find out the, $\mbox{gcd}(\mbox{Coefficient of}\  x ,\mbox{Coefficient of}\ y).$ i.e.
+
+    \begin{equation*}
+        \begin{split}
+            & \mbox{gcd}(158,-57) \\[2mm]
+            158 & = -57\times (-2) + 44 \\[2mm]
+            -57 & = 44\times (-2) + 31 \\[2mm]
+            44 & = 31\times 1 + 13 \\[2mm]
+            31 & = 13\times 2 + 5 \\[2mm]
+            13 & = 5\times 2 + 3 \\[2mm]
+            5 & = 3\times 1 + 2 \\[2mm]
+            3 & = 2\times 1 + 1 \\[2mm]
+            2 & = 1\times 2 + 0 \\[2mm]
+            \mbox{Hence, gcd}(158,-57) & = 1
+        \end{split}    
+    \end{equation*}
+
+        
+    Since, $\mbox{gcd}(158,-57)=1|7$, so our diophantine equation is solvable for integers.
+    \vspace*{0.2cm}
+
+    Now, just write down the equation for the {\bf remainders},
+
+    \begin{equation*}
+        \begin{split}
+            44 & = 158(1) + 57(-2) \\
+            31 & = 57(-1) + 44(2) \\[2mm]
+            13 & = 44(1) + 31(-1) \\[2mm]
+            5 & = 31(1) + 13(-2) \\[2mm]
+            3 & = 13(1) + 5(-2) \\[2mm]
+            2 & = 5(1) + 3(-1) \\[2mm]
+            1 & = 3(1) + 2(-1) 
+        \end{split}    
+    \end{equation*}
+
+    Now let us consider the last remainder,
+
+    $$1  = 3(1) + 2(-1)$$
+
+    Now using the backward substitutions for the remainders, the above equation transformed as,
+
+    \begin{equation*}
+        \begin{split}
+            1 & = 3(1) + [5(1) + 3(-1)](-1) \\[2mm] 
+            & = 3(1) + 5(-1) + 3(1) \\[2mm]
+            & = 3(2) + 5(-1) \\[2mm]
+            & = [13(1) + 5(-2)](2) + 5(-1) \\[2mm]
+            & = 13(2) + 5(-4) + 5(-1) \\[2mm]
+            & = 13(2) + 5(-5) \\[2mm]
+            & = 13(2) + [31(1) + 13(-2)](-5) \\[2mm]
+            & = 13(2) + 31(-5) + 13(10) \\[2mm]
+            & = 13(12) + 31(-5)\\[2mm]
+            & = [44(1) + 31(-1)](12) + 31(-5)\\[2mm]
+            & = 44(12) + 31(-12) + 31(-5)\\[2mm]
+            & = 44(12) + 31(-17)\\[2mm]
+            & = 44(12) + [57(-1) + 44(2)](-17)\\[2mm]
+            & = 44(12) + 57(17) + 44(-34)\\[2mm]
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            1 & = 44(-22) + 57(17)\\[2mm]
+            & = [158(1) + 57(-2)](-22) + 57(17)\\[2mm]
+            & = 158(-22) + 57(44) + 57(17)\\[2mm]
+            1 & = 158(-22) + 57(61)
+        \end{split}
+    \end{equation*}
+
+    Now, Multiply with $7$ to the above equation, we have
+    \begin{equation*}
+        7 = 158(-154) - 57(-427) \tag{2}
+    \end{equation*}
+    
+
+    This is the linear combination of $158$ and $-57$ of the given problem.
+    \vspace*{2mm}
+
+    Now, comparing equation(2) with equation(1) we get as, 
+
+    
+    \begin{align*}
+        \boxed{$$x = -154\  \mbox{and}\  y = -427$$.}
+    \end{align*}
+
+    This is called the particular solution of the given diophantine equation.
+
+    \begin{itemize}
+        \item \underline{General Solution}:
+    \end{itemize}
+
+    For general solution, we have the expression,
+
+   
+    $$x_{gen.} = x + \left\{\frac{b}{\mbox{gcd}(a,b)}\right\}\cdot t$$
+    
+
+    
+    $$y_{gen.} = y - \left\{\frac{a}{\mbox{gcd}(a,b)}\right\}\cdot t$$
+
+    where $\forall\ t\in \mathbb{Z}.$
+
+    \vspace*{2mm}
+    
+
+    Thus our general solution is given by,
+
+    \begin{align*}
+        \boxed{$$x_{gen.} = -154 + \left\{\frac{-57}{1}\right\}t = -154 - 57t$$} 
+    \end{align*}
+    
+    \begin{align*}
+        \boxed{$$y_{gen.} = -427 - \left\{\frac{158}{1}\right\}t = -427 - 158t$$}
+    \end{align*}
+
+    where $\forall\ t\in \mathbb{Z}$.
+
+    \begin{itemize}
+        \item For positive solutions,
+    \end{itemize}
+    \begin{center}
+        we must have these conditions,
+    \end{center}
+    \vspace*{0.2cm}
+    \begin{center}
+        $x_{gen.} > 0\ \mbox{and}\ y_{gen} > 0.$
+    \end{center}
+
+    
+    \vspace*{0.2mm}
+
+    Thus,
+
+    
+    $$-154 - 57t  > 0 $$
+    $$t  < -\frac{154}{57} $$
+    $$t  < -2.70$$
+       
+    and,
+
+    $$-427 - 158t  > 0$$
+    $$t  < \frac{-427}{158}$$
+    $$t  < -2.70$$
+
+    \vspace*{3mm}
+
+    It concludes that $t<-2.70$.i.e the integers in the interval
+    $-\infty<t\leq -3$ are all the \texttt{{\bf positive solutions of the given linear diophantine equation.}}
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No 2.}}
+
+    Let us consider $a,b\in \mathbb{Z}$ not both zero at a time.
+
+    \begin{equation*}
+        \mbox{Let}\ \mbox{gcd}(a,b) = d \tag{1} 
+    \end{equation*}
+
+    $$\implies d|a, d|b\  ;\  \mbox{If}\ c|a, c|b\ \mbox{then}\ c|d\      \forall\ c\in \mathbb{Z} $$
+
+    $$\mbox{Since,}\ d|a, d|b \Longleftrightarrow \ d|-a, d|b.$$
+
+    $$\mbox{therefore}\ d|-a, d|b\  \mbox{and if},\ c|-a,\ c|b\ \mbox{then}\ c|d$$
+
+    \begin{equation*}
+        \implies\ \mbox{gcd}(-a,b) = d \tag{2}
+    \end{equation*}
+
+    Again,
+
+    $$\mbox{Since,}\ d|a, d|b \Longleftrightarrow \ d|a, d|-b.$$
+
+    $$\mbox{therefore}\ d|a, d|-b\  \mbox{and if},\ c|a,\ c|-b\ \mbox{then}\ c|d$$
+
+    \begin{equation*}
+        \implies\ \mbox{gcd}(a,-b) = d \tag{3}
+    \end{equation*}
+
+    Next,
+
+    $$\mbox{Since,}\ d|a, d|b \Longleftrightarrow \ d|-a, d|-b.$$
+
+    $$\mbox{therefore}\ d|-a, d|-b\  \mbox{and if},\ c|-a,\ c|-b\ \mbox{then}\ c|d$$
+
+    \begin{equation*}
+        \implies\ \mbox{gcd}(-a,-b) = d \tag{4}
+    \end{equation*}
+
+    From equations (1), (2), (3) and (4) we have, 
+
+    \begin{align*}
+        \boxed{$$\mbox{gcd}(a,b) = \mbox{gcd}(-a,b) = \mbox{gcd}(a,-b) = \mbox{gcd}(-a,-b)$$}
+    \end{align*}
+
+
+    Hence, we have the result.
+
+    \vspace*{2cm}
+    
+    This shows that gcd of any number wheather it is positive or negative , in all the cases are likely to be the same value.
+
+    \pagebreak
+
+    \subsection*{\underline{Solution of Question No 3.}}
+
+    \subsubsection*{\underline{Hill cipher:}}
+
+    Hill Cipher, in the pretext of classical cryptography, follows a polygraphic substitution cipher, which means there is uniform substitution across multiple levels of blocks. This polygraphic substitution cipher makes it possible for Hill Cipher to work seamlessly with digraphs (two-letter blocks), trigraphs (three-letter blocks), or any multiple-sized blocks for the purpose of building a uniform cipher.
+
+   Hill Cipher is based on linear algebra, the sophisticated use of matrices in general (matrix multiplication and matrix inverses), as well as rules for modulo arithmetic. Evidently, it is a more mathematical cipher compared to others.
+
+   The Hill Cipher is also a block cipher. A block cipher is an encryption method that implements a deterministic algorithm with a symmetric key to encrypt a block of text. It doesn't need to encrypt one bit at a time like in stream ciphers. Hill Cipher being a block cipher theoretically, means that it can work on arbitrary-sized blocks.
+
+   While Hill Cipher is digraphic in nature, it is capable of expanding to multiply any size of letters to add more complexity and reliability for better use. Since most of the problems and solutions for Hill Ciphers are mathematical in nature, it becomes easy to conceal letters with precision.
+
+   We will cover both Hill Cipher encryption and decryption procedures solving $2 \times 2$ matrices. However, it is possible to use Hill Cipher for higher matrices $(3\times 3, 4\times 4, 5 \times 5,\  \mbox{or}\  6 \times 6)$ with a higher and advanced level of mathematics and complexity. Here, we will demonstrate simple examples that will provide more understanding of the Hill Cipher.
+   \vspace*{0.5cm}
+
+   In Hill cipher, key $K$ must be  a square matrix and non-singular. and
+
+   $gcd(|K|,26) = 1$ i.e co-prime or relatively-prime.
+
+   \vspace*{0.5cm}
+
+   \underline{{{\bf Hill cipher Algorithm:}}}
+
+   $$\mbox{Encryption:}\ C \equiv (K\cdot P)(\mbox{mod}\ 26)$$
+   $$\mbox{Decryption:}\ P \equiv (K^{-1}\cdot C)(\mbox{mod}\ 26)$$
+
+   Now,
+
+   \begin{itemize}
+    \item Let's Encrypt and Decrypt the message {\bf\texttt{We live in an insecure world}} with key $\begin{bmatrix}
+        27 & 1\\ 
+        3 & 2
+        \end{bmatrix}$.
+   \end{itemize}
+
+    \subsection*{\underline{Solution}:}
+
+    Given message is :
+    {\bf \texttt{we live in an insecure world}}
+
+    Now, Break the message into digraphs :
+    \begin{center}
+        {\bf \texttt{we li ve in an in se cu re wo rl da}}
+    \end{center}
+
+    (If the message did not consist of an even number of letters, we would place a null at the end.)
+
+    Now convert each pair of letters to its number-pair equivalent. We will use our usual $a=0,1,\cdots z=25$.
+    \vspace*{0.3cm}
+
+    22 4,   11 8,   21 4,   8 13,   0 13,   8 13,   18 4,   2 20,   17 4,   22 14,   17 11,   3 0.
+
+    \vspace*{0.3cm}
+
+    \subsection*{\underline{Encryption:}}
+
+    Now, encrypt the each pair using the key, which is matrix $\begin{bmatrix}
+        27 & 1 \\
+        3 & 2
+    \end{bmatrix}.$
+
+    \vspace*{0.3cm}
+
+    Make the first pair of numbers into column vector $\left(w(22)\ e(4)\right),$ and multiply that matrix by the key.
+
+    \begin{center}
+        \begin{equation*}
+            \begin{split}
+                \begin{bmatrix}
+                    27 & 1 \\
+                    3 & 2
+                \end{bmatrix}
+                \begin{bmatrix}
+                    22 \\
+                    4
+                \end{bmatrix} & = \begin{bmatrix}
+                    27\times 22 + 1\times 4 \\
+                    3\times 22 + 2\times 4
+                \end{bmatrix}\\  & = \begin{bmatrix}
+                    598 \\
+                    74
+                \end{bmatrix}    
+            \end{split}
+        \end{equation*}
+    \end{center}
+
+    of course, we need our result to be {\bf mod 26}. thus,
+
+    \begin{equation*}
+        \begin{bmatrix}
+            598 \\
+            74
+        \end{bmatrix} \equiv \begin{bmatrix}
+            0 \\
+            22
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{The cipher text is A(0) W(22)}$}
+    \end{center}
+    
+    For the next pair l(11) i(8),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            11 \\
+            8
+        \end{bmatrix} \equiv \begin{bmatrix}
+            19 \\
+            23
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{19 corressponds to T and 23 corresponds to X}$}
+    \end{center}
+
+    Again, For the next pair v(21) e(4),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            21 \\
+            4
+        \end{bmatrix} \equiv \begin{bmatrix}
+            25 \\
+            19
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{25 corressponds to Z and 19 corresponds to T}$}
+    \end{center}
+
+    Again, For the next pair i(8) n(13),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            8 \\
+            13
+        \end{bmatrix} \equiv \begin{bmatrix}
+            21 \\
+            24
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{21 corressponds to V and 24 corresponds to Y}$}
+    \end{center}
+
+    \pagebreak
+
+    Again, For the next pair $a$(0) n(13),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            0 \\
+            13
+        \end{bmatrix} \equiv \begin{bmatrix}
+            13 \\
+            0
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{13 corressponds to N and 0 corresponds to A}$}
+    \end{center}
+
+    Again, For the next pair i(8) n(13),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            8 \\
+            13
+        \end{bmatrix} \equiv \begin{bmatrix}
+            21 \\
+            24
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{21 corressponds to V and 24 corresponds to Y}$}
+    \end{center}
+
+    Again, For the next pair $s$(18) e(4),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            18 \\
+            4
+        \end{bmatrix} \equiv \begin{bmatrix}
+            22 \\
+            10
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{22 corressponds to W and 10 corresponds to K}$}
+    \end{center}
+
+    Again, For the next pair c(2) u(20),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            2 \\
+            20
+        \end{bmatrix} \equiv \begin{bmatrix}
+            22 \\
+            20
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{22 corressponds to W and 20 corresponds to U}$}
+    \end{center}
+
+    Again, For the next pair r(17) e(4),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            17 \\
+            4
+        \end{bmatrix} \equiv \begin{bmatrix}
+            21 \\
+            7
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{21 corressponds to V and 7 corresponds to H}$}
+    \end{center}
+
+    Again, For the next pair w(22) o(14),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            22 \\
+            14
+        \end{bmatrix} \equiv \begin{bmatrix}
+            10 \\
+            16
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{10 corressponds to K and 16 corresponds to Q}$}
+    \end{center}
+
+    Again, For the next pair r(17) $l$(11),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            17 \\
+            11
+        \end{bmatrix} \equiv \begin{bmatrix}
+            2 \\
+            21
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{2 corressponds to C and 21 corresponds to V}$}
+    \end{center}
+
+    Again, For the next pair d(3) $a$(0),
+
+    \begin{equation*}
+        \begin{bmatrix}
+            27 & 1 \\
+            3 & 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            3 \\
+            0
+        \end{bmatrix} \equiv \begin{bmatrix}
+            3 \\
+            9
+        \end{bmatrix} \mbox{mod 26}
+    \end{equation*}
+
+    \begin{center}
+        \boxed{$\mbox{3 corressponds to D and 9 corresponds to J}$}
+    \end{center}
+
+    Gathering the encrypted data of all the pairs, the cipher text for whole message is,
+
+    \begin{center}
+        \texttt{Ciphertext, $C\ \equiv$
+        AW TX ZT VY NA VY WK WU VH KQ CV DJ}
+    \end{center}
+
+    \begin{tcolorbox}
+        \subsection*{\underline{Decryption:}}
+
+    The determinant of $\begin{bmatrix}
+        27 & 1 \\
+        3 & 2
+    \end{bmatrix}$ is $27\times 2 - 3\times 1 = 54-3 = 51 \equiv 25\ \mbox{mod 26}$.
+
+    \vspace*{0.3cm}
+
+    Since, gcd(25,26) = 1 i.e 25 and 26 are co-prime. Thus 25 has a multiplicative inverse modulo 26, this matrix has an inverse. The inverse of the matrix is 
+
+    
+    $$\begin{bmatrix}
+        \frac{2}{25} & \frac{-1}{25} \\\\\
+        \frac{-3}{25} & \frac{27}{25}
+    \end{bmatrix}\mbox{mod 26}$$
+
+    Dividing by 25 modulo 26 is the same as the multiplying by the multiplicative inverse of 25 modulo 26.
+    But, we know that multiplicative inverse of 25 is 25 modulo 26.So, the inverse of the matrix is
+
+    \begin{equation*}
+        \begin{bmatrix}
+            \frac{2}{25} & \frac{-1}{25}\\\\
+            \frac{-3}{25} & \frac{27}{25}
+        \end{bmatrix}\mbox{mod}\ 26 \equiv \begin{bmatrix}
+            2\times 25 & -1\times 25 \\
+            -3\times 25 & 27\times 25
+        \end{bmatrix}\mbox{mod 26}
+    \end{equation*}
+
+    \begin{equation*}
+        \equiv \begin{bmatrix}
+            50 & -25 \\
+            -75 & 675
+        \end{bmatrix}\mbox{mod 26}\ \equiv\ \begin{bmatrix}
+            24 & 1 \\
+            3 & 25
+        \end{bmatrix}
+    \end{equation*}
+    \end{tcolorbox}
+
+    \vspace*{0.5cm}
+
+
+    We use the inverse key $\begin{bmatrix}
+        24 & 1 \\
+        3 & 25
+    \end{bmatrix}$ to decrypt \texttt{AW}, which is the first digraph of the ciphertext.
+
+    \vspace*{0.2cm}
+
+    \texttt{A} corresponds to 0, and \texttt{W} corresponds to 22.
+
+    $$\begin{bmatrix}
+        24 & 1 \\
+        3 & 25
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 \\
+        22
+    \end{bmatrix} \equiv \begin{bmatrix}
+        22 \\
+        550
+    \end{bmatrix}\mbox{mod 26} = \begin{bmatrix}
+        22 \\
+        4
+    \end{bmatrix}$$
+    \texttt{w}(22) \texttt{e}(4).
+
+    \paragraph*{}
+
+    In a similar manner, we can decrypt the remainder of the ciphertext.
+
+    Eventually, the Plaintext $P \equiv$ \texttt{we li ve in an in se cu re wo rl da}
+    
+
+    or, $\mbox{\texttt{we live in an insecure world}.}$
+
+    \subsection*{\underline{Solution of Question No 4.}}
+
+    \subsubsection*{\underline{Complete Residue System}:}
+
+    Let $m$ be a fixed positive integer then the set of integers $\left\{a_1,a_2,\cdots ,a_k\right\}$ is called complete residue system if it satisfies the following conditions:
+
+    \vspace*{0.3cm}
+
+    1. $a_i \not\equiv a_j$(mod m) $\forall\ i\neq j$
+
+    \vspace*{0.2cm}
+    2.For each integer $n$ their correspond an unique integer $a_i$ such that,
+    $$n\equiv a_i (\mbox{mod m})$$
+
+    \underline{{\bf Example:}}
+    \vspace*{0.3cm}
+
+    The set of integers $\left\{49,20,10,17,-18,-21\right\}$
+    is a complete residue system modulo 6.
+
+    Let's assign $a_1 = 49, a_2 = 20, a_3 = 10, a_4 = 17, a_5 = -18, a_6 = -21$
+
+    \vspace*{0.2cm}
+    $\implies\ a_i \not\equiv a_j$(mod 6)    $\forall\ i\neq j$
+
+    \begin{center}
+        6 \begin{tabular}{ |c|c|c|c|c|c| } 
+            \hline  
+        49 & 20 & 10 & 17 & -18 & -21 \\
+        \hline
+        1 & 2 & 4 & 5 & 0 & 3
+        \end{tabular} 
+    \end{center}
+
+    Here the digits on the bottom cells are remainder when the digits of the top cells are divided by 6.
+
+    \vspace*{0.3cm}
+
+    i.e $49\not\equiv 20$(mod 6) ,  $20\not\equiv 10$(mod 6)
+
+    so, $a_i\neq a_j$(mod 6),   for $i\neq j$
+
+    \vspace*{0.3cm}
+
+    Since,  $$1\equiv 49\ \mbox{(mod 6)}   ,    5\equiv 17\mbox{(mod 6)}$$
+    \begin{center}
+        $2\equiv 20$(mod 6)   ,    $0\equiv -18$(mod 6)
+    \end{center}
+    
+    \begin{center}
+        $4\equiv 10$(mod 6)   ,    $3\equiv -21$(mod 6)
+    \end{center}
+
+    \subsubsection*{\underline{{\bf Reduced Residue System}}:}
+
+    The set of integers $\left\{a_1,a_2,\cdots ,a_k\right\}$ is called a reduced residue system mod $n$ if it satisfies the following conditions,
+
+    \vspace*{0.3cm}
+
+    1. gcd($a_i,m$) = 1      for every $i = 1,2,\cdots ,k$
+
+    \vspace*{0.3cm}
+
+    2. $a_i \not\equiv a_j$(mod $n$) $\forall\ i\neq j$
+
+    \vspace*{0.3cm}
+
+    3. For each integer $n$ , relatively prime to $m$ therefore correspond an unique integer $a_i$ such that,
+
+    $$n\equiv a_i\mbox{(mod n)}$$.
+
+    \pagebreak
+
+    \underline{{\bf Example:}}
+    \vspace*{0.3cm}
+
+    The set of integers $\left\{1,5,7,11\right\}$ is a reduced residue system modulo 12 because gcd(1,12) = gcd(5,12) = gcd(7,12) = gcd(11,12) = 1.
+
+    \vspace*{0.3cm}
+
+    Let's assign $a_1 = 1,\ a_2 = 5,\ a_3 = 7,\ a_4 = 11$
+
+
+    \vspace*{0.3cm}
+    therefore $a_i\not\equiv_j$  for $i\neq j.$
+
+
+    \vspace*{0.3cm}
+
+    Put $n = 17,\ m = 12\ \implies$ gcd(17,12) = 1 and
+    $$17\equiv 5\ \mbox{mod 12}$$
+
+    Put $n = 25,\ m = 12\ \implies$ gcd(25,12) = 1 and
+    $$25\equiv 1\ \mbox{mod 12}$$
+
+    Put $n = 19,\ m = 12\ \implies$ gcd(19,12) = 1 and
+    $$19\equiv 7\ \mbox{mod 12}$$
+
+    Put $n = 35,\ m = 12\ \implies$ gcd(35,12) = 1 and
+    $$35\equiv 11\ \mbox{mod 12}$$
+
+    \vspace*{0.3cm}
+
+    Now, let's solve the given problem ,
+    \vspace*{0.3cm}
+
+    $S = \left\{-19,-1,22,43,46,79,113,452\right\}$ is a reduced residue system modulo 15, because,
+
+    \vspace*{0.3cm}
+
+    gcd(-19,15) = gcd(-1,15) = gcd(22,15) = gcd(43,15) = gcd(46,15) = gcd(79,15) = gcd(113,15) = gcd(452,15) = 1. 
+
+    \vspace*{0.3cm}
+
+    Put,
+
+    $a_1 = -19,\ a_2 = -1,\ a_3 = 22,\ a_4 = 43,\ a_5 = 46,\ a_6 = 79,\ a_7 = 113,\ a_8 = 452$.
+
+
+    \vspace*{0.3cm}
+
+    This shows that $a_i\neq a_j$ for $i\neq j$.
+
+    \vspace*{0.3cm}
+    Now,
+
+    Put, $n = 11,\ m=15\ \implies$ gcd(11,15) = 1  and $11\equiv -19$(mod 15)
+
+
+    \vspace*{0.3cm}
+    Put, $n = 14,\ m=15\ \implies$ gcd(14,15) = 1  and $14\equiv -1$(mod 15)
+
+
+    \vspace*{0.3cm}
+    Put, $n = 7,\ m=15\ \implies$ gcd(7,15) = 1  and $7\equiv 22$(mod 15)
+
+
+    \vspace*{0.3cm}
+    Put, $n = 13,\ m=15\ \implies$ gcd(13,15) = 1  and $13\equiv 43$(mod 15)
+
+
+
+    \vspace*{0.3cm}
+    Put, $n = 1,\ m=15\ \implies$ gcd(1,15) = 1  and $1\equiv 46$(mod 15)
+
+
+
+    \vspace*{0.3cm}
+    Put, $n = 4,\ m=15\ \implies$ gcd(4,15) = 1  and $4\equiv 79$(mod 15)
+
+
+    \vspace*{0.3cm}
+    Put, $n = 8,\ m=15\ \implies$ gcd(8,15) = 1  and $8\equiv 113$(mod 15)
+
+
+    \vspace*{0.3cm}
+    Put, $n = 2,\ m=15\ \implies$ gcd(2,15) = 1  and $2\equiv 452$(mod 15).
+
+
+
+\subsection*{\underline{Solution of Question No 5.}}
+
+We have to prove that,
+
+
+\vspace*{0.3cm}
+
+$a^{\phi(n)}\equiv 1$(mod $n$) ,  $\forall\ n\geq 1 \in \mathbb{Z}$ and $a \in \mathbb{Z}$ such as gcd($a,n$) = 1.
+
+
+
+\vspace*{0.3cm}
+
+\underline{{\bf Proof:}}
+
+
+\vspace*{0.3cm}
+
+If $n=1$ then $\phi(n) = 1$.
+
+
+\vspace*{0.3cm}
+
+and  $a' = a \equiv 1$(mod 1)
+
+
+
+\vspace*{0.3cm}
+Now, we assume $n > 1.$ Let $a_1,a_2,\cdots ,aa_{\phi(n)}$
+be the positive integer less than $n$ which are relatively prime to $n$ .i.e $(a_i,n) = 1$
+
+
+\vspace*{0.3cm}
+
+We consider $aa_1,aa_2,\cdots a_{\phi(n)}$ for each $i$ ;
+$$1\leq i\leq \phi(n)\ ,\ aa_i\not\equiv 0\ \mbox{mod n}$$
+
+because $n|aa_i$ , $(a,n) =1$ $\implies\ n|a_i$
+
+
+
+\vspace*{0.3cm}
+
+Which is not possible because,
+
+$$aa_i\equiv aa_j\ \mbox{mod n}$$
+
+$$\implies\ n|(aa_i - aa_j)\ \implies\ n|a(a_i-a_j)$$
+
+and $(a,n) = 1$
+
+$$\implies\ n|(a_i - a_j)$$
+
+$$\implies\ a_i\equiv a_j\ \mbox{mod n}$$
+
+Which is again not possible.
+
+
+\vspace*{0.3cm}
+
+Thus $aa_1,aa_2,\cdots \cdots ,aa_{\phi(n)}$ are $\phi(n)$ mutually congruent integer and therefore,
+
+$$aa_1 \equiv aa'_1\ \mbox{(mod n)}$$
+$$aa_2 \equiv aa'_2\ \mbox{(mod n)}$$
+$$\cdots \cdots \cdots \cdots \cdots \cdots$$
+$$\cdots \cdots \cdots \cdots \cdots \cdots$$
+$$aa_{\phi(n)} \equiv aa'_{\phi(n)}\ \mbox{(mod n)}$$
+
+where $a'_1,a'_2,\cdots \cdots$ and $a_1,a_2,\cdots \cdots$ are in same in other order.
+
+
+\vspace*{0.3cm}
+
+multiplying these relations we get as,
+
+$$aa_1\cdot aa_2\cdot \cdots \cdots aa_{\phi(n)}\equiv a'_1a'_2\cdots \cdots a'_{\phi(n)}\ \mbox{(mod n)}$$
+
+$$a^{\phi(n)}a_1a_2\cdots \cdots a_{\phi(n)}\equiv a_1a_2\cdots \cdots a_{\phi(n)}\ \mbox{(mod n)}$$
+
+Since each $a_i$ is co-prime to $n$, we have $(a_1\  a_2\ \cdots \cdots \cdots a_{\phi(n)})$ is co-prime to $n$.
+
+Therefore,
+
+
+\vspace*{0.3cm}
+\begin{center}
+    \boxed{$$a^{\phi(n)}\equiv 1\ \mbox{(mod n)}$$}
+\end{center}
+\end{document}    
